@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="yc.facultycv">
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <utility
+        component=".available_departments.AvailableDepartmentsFactory"
+        name="yc.facultycv.AvailableDepartments"
+    />
+
+
+</configure>

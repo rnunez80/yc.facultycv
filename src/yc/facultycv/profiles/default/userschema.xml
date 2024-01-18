@@ -1,0 +1,104 @@
+<model xmlns:easyform="http://namespaces.plone.org/supermodel/easyform" xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:indexer="http://namespaces.plone.org/supermodel/indexer" xmlns:lingua="http://namespaces.plone.org/supermodel/lingua" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:users="http://namespaces.plone.org/supermodel/users" xmlns="http://namespaces.plone.org/supermodel/schema">
+  <schema name="member-fields">
+    <field name="employeeID" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>Employee ID</title>
+    </field>
+    <field name="last_name" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>Last Name</title>
+    </field>
+    <field name="first_name" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>First Name</title>
+    </field>
+    <field name="currentStatus" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>Current Status</title>
+    </field>
+    <field name="departmentNumber" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>Department Code</title>
+    </field>
+    <field name="displayName" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>Display Name</title>
+    </field>
+    <field name="employeeType" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>Employee Type</title>
+    </field>
+    <field name="orgStatus" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>Org Status</title>
+    </field>
+    <field name="voicemail" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>Voice Mail</title>
+    </field>
+    <field name="division" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>division</title>
+    </field>
+    <field name="dn" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>Distinguished Name</title>
+    </field>
+    <field name="memberOf" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>member of</title>
+    </field>
+    <field name="UUID" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>UUID</title>
+    </field>
+    <field name="windows_login_name" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>Windows Login Name</title>
+    </field>
+    <field name="department" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>Department</title>
+    </field>
+    <field name="personalTitle" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>Other Title</title>
+    </field>
+    <field name="functionalTitle" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>Primary Title</title>
+    </field>
+    <field name="location" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>location</title>
+    </field>
+    <field name="home_page" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>home_page</title>
+    </field>
+    <field name="phone" type="zope.schema.TextLine" users:forms="On Registration|In User Profile">
+      <description/>
+      <required>False</required>
+      <title>Phone</title>
+    </field>
+  </schema>
+</model>

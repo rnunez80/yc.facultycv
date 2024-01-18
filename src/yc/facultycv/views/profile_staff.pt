@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+   i18n:domain="plone"
+   metal:use-macro="context/main_template/macros/master" lang="en-US">
+<head>
+  <metal:block fill-slot="column_one_slot"/>
+  <metal:block fill-slot="column_two_slot"/>
+</head>
+<body>
+<div metal:fill-slot="main">
+  <div metal:define-macro="body">
+    <tal:main-macro metal:define-macro="main"  tal:define="current_url context/absolute_url;object_title context/@@plone_context_state/object_title">
+      <h1 class="documentFirstHeading visualNoPrint"><span tal:content="object_title"> Title or id </span></h1>
+      <b><u tal:replace="context/@@profile-staff/TeachingTitle">Title</u><br/><u tal:define="dept context/@@profile-staff/Department;" tal:attributes="src string:${context/@@profile-staff/DepartmentURL}" tal:replace="dept">Department</u></b>
+
+
+      <img class="image-right" src=""
+           alt="" tal:attributes="alt context/description;src python:(current_url)+'/image'" tal:condition="context/image" />
+
+      <p>Phone: <u tal:replace="context/@@profile-staff/OfficePhone">office Phone</u><br/>
+        Office Location: <u tal:replace="context/@@profile-staff/OfficeLocation">office Location</u><br/>
+        <a tal:define="email context/@@profile-staff/Email"
+           tal:attributes="href python:'mailto:'+email"
+           tal:content="email"
+           tal:condition="context/@@profile-staff/Email" /><br/>
+        <a href="" tal:content="context/website" tal:attributes="href context/website"  tal:condition="context/website">Website</a>
+      </p>
+
+    </tal:main-macro>
+  </div>
+</div>
+</body>
+</html>

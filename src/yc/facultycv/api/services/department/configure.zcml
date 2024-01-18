@@ -1,0 +1,29 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:plone="http://namespaces.plone.org/plone">
+
+  <plone:service
+    method="GET"
+    name="@department_votes"
+    for="yc.facultycv.interfaces.IDepartmentVoteMarker"
+    factory=".get.Votes"
+    permission="zope2.View"
+    />
+
+  <plone:service
+    method="POST"
+    name="@department_votes"
+    for="yc.facultycv.interfaces.IDepartmentVoteMarker"
+    factory=".get.Vote"
+    permission="yc.facultycv.do_department_vote"
+    />
+
+  <plone:service
+    method="DELETE"
+    name="@department_votes"
+    for="yc.facultycv.interfaces.IDepartmentVoteMarker"
+    factory=".get.Delete"
+    permission="zope2.View"
+    />
+
+</configure>

@@ -1,0 +1,106 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en" metal:use-macro="context/main_template/macros/master" i18n:domain="plone">
+<body>
+<div metal:fill-slot="main">
+  <div metal:define-macro="body">
+    <tal:main-macro metal:define-macro="main" tal:define="token view/token; url context/absolute_url">
+      <h1>Add New P&B Doc</h1>
+      <p>Please select your Rank/Position</p>
+
+
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#Faculty" data-toggle="tab">Faculty</a></li>
+        <li><a href="#Lecturer" data-toggle="tab">Lecturer</a></li>
+        <li><a href="#CLT" data-toggle="tab">CLT</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="Faculty">
+          <h2>Faculty Reappointment</h2>
+          <ul>
+            <li>
+              <a href="${url}/++add++pbaction2?_authenticator=${token}">First</a>
+            </li>
+            <li><a
+              href="${url}/++add++pbaction2?_authenticator=${token}">Second</a>
+            </li>
+            <li><a
+              href="${url}/++add++pbactionportfolioa?_authenticator=${token}">Third</a>
+            </li>
+            <li><a
+              href="${url}/++add++pbaction2?_authenticator=${token}">Fourth</a>
+            </li>
+            <li><a href="${url}/++add++pbaction2?_authenticator=${token}">Fifth</a>
+            </li>
+            <li><a href="${url}/++add++pbaction2?_authenticator=${token}">Sixth</a>
+            </li>
+            <li><a
+              href="${url}/++add++pbactionportfoliob?_authenticator=${token}">Seventh</a>
+            </li>
+          </ul>
+          <h2>Faculty Promotion</h2>
+          <ul>
+            <li><a href="${url}/++add++pbactionportfoliob?_authenticator=${token}">Assistant to Associate Professor</a>
+            </li>
+            <li><a href="${url}/++add++pbactionportfolioc?_authenticator=${token}">Associate to Full Professor</a></li>
+          </ul>
+        </div>
+        <div class="tab-pane" id="Lecturer">
+          <h2>Lecturer Reappointment</h2>
+          <ul>
+            <li><a href="${url}/++add++pbaction2?_authenticator=${token}">First</a>
+            </li>
+            <li><a
+              href="${url}/++add++pbaction2?_authenticator=${token}">Second</a>
+            </li>
+            <li><a
+              href="${url}/++add++pbactionportfolioa?_authenticator=${token}">Third</a>
+            </li>
+            <li><a
+              href="${url}/++add++pbaction2?_authenticator=${token}">Fourth</a>
+            </li>
+            <li><a
+              href="${url}/++add++pbactionportfolioa?_authenticator=${token}">Fifth</a>
+            </li>
+          </ul>
+
+        </div>
+        <div class="tab-pane" id="CLT">
+          <h2>CLT Reappointment</h2>
+          <ul>
+            <li><a
+              href="${url}/++add++pbactionclt2?_authenticator=${token}">First</a>
+            </li>
+            <li><a
+              href="${url}/++add++pbactionclt2?_authenticator=${token}">Second</a>
+            </li>
+            <li><a
+              href="${url}/++add++pbactionclt2?_authenticator=${token}">Third</a>
+            </li>
+            <li><a
+              href="${url}/++add++pbactionclt2?_authenticator=${token}">Fourth</a>
+            </li>
+            <li><a
+              href="${url}/++add++pbactionclt2?_authenticator=${token}">Fifth</a>
+            </li>
+          </ul>
+          <h2>CLT Promotion</h2>
+          <ul>
+            <li><a href="${url}/++add++pbactionclt2?_authenticator=${token}">CLT
+              Promotion</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="alert">
+        <h2>Other Actions</h2>
+        <ul>
+          <li><a href="${url}/++add++pbactionleave2">Leave Application</a></li>
+          <li><a href="${url}/++add++pbactionscholar2">Scholar Incentive Award</a></li>
+          <li><a href="${url}/++add++symposium_talk">Symposium Talk</a></li>
+        </ul>
+      </div>
+      <script src="/++theme++yc-castle/js/bootstrap.min.js"></script>
+    </tal:main-macro>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:plone="http://namespaces.plone.org/plone">
+
+  <plone:service
+    method="GET"
+    name="@college_votes"
+    for="yc.facultycv.interfaces.ICollegeVoteMarker"
+    factory=".get.Votes"
+    permission="zope2.View"
+    />
+
+  <plone:service
+    method="POST"
+    name="@college_votes"
+    for="yc.facultycv.interfaces.ICollegeVoteMarker"
+    factory=".get.Vote"
+    permission="yc.facultycv.do_college_vote"
+    />
+
+  <plone:service
+    method="DELETE"
+    name="@college_votes"
+    for="yc.facultycv.interfaces.ICollegeVoteMarker"
+    factory=".get.Delete"
+    permission="zope2.View"
+    />
+
+</configure>

@@ -1,0 +1,139 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="plone">
+
+  <configure zcml:condition="installed AccessControl.security">
+    <!-- -*- extra stuff goes here -*- -->
+
+    <permission
+        id="yc.facultycv.AddPoe"
+        title="yc.facultycv: Add Poe"
+    />
+
+
+    <permission
+      id="yc.facultycv.AddPbaction"
+      title="yc.facultycv: Add Pbaction"
+    />
+
+    <permission
+      id="yc.facultycv.AddCollege"
+      title="yc.facultycv: Add College"
+    />
+
+    <permission
+      id="yc.facultycv.AddFaculty"
+      title="yc.facultycv: Add Faculty"
+    />
+
+    <permission
+      id="yc.facultycv.AddStaff"
+      title="yc.facultycv: Add Staff"
+    />
+
+    <permission
+      id="yc.facultycv.AddPbactionclt"
+      title="yc.facultycv: Add Pbactionclt"
+    />
+
+    <permission
+      id="yc.facultycv.AddPbactionleave"
+      title="yc.facultycv: Add Pbactionleave"
+    />
+
+    <permission
+      id="yc.facultycv.AddPbactionportfolioa"
+      title="yc.facultycv: Add Pbactionportfolioa"
+    />
+
+    <permission
+      id="yc.facultycv.AddPbactionportfoliob"
+      title="yc.facultycv: Add Pbactionportfoliob"
+    />
+
+    <permission
+      id="yc.facultycv.AddPbactionportfolioc"
+      title="yc.facultycv: Add Pbactionportfolioc"
+    />
+
+    <permission
+      id="yc.facultycv.AddPbactionscholar"
+      title="yc.facultycv: Add Pbactionscholar"
+    />
+
+    <permission
+      id="yc.facultycv.AddSymposiumTalk"
+      title="yc.facultycv: Add Symposium Talk"
+    />
+
+    <permission
+      id="yc.facultycv.EditPBCollegeChair"
+      title="yc.facultycv: edit PB College Chair"
+    />
+
+    <permission
+      id="yc.facultycv.EditPBDeptChair"
+      title="yc.facultycv: edit PB dept Chair"
+    />
+    <permission
+      id="yc.facultycv.EditPBMemo"
+      title="yc.facultycv: edit PB memo"
+    />
+    <permission
+      id="yc.facultycv.ViewPBCollegeCommittees"
+      title="yc.facultycv: view PB college committees"
+    />
+    <permission
+      id="yc.facultycv.ViewPBDeptCommittees"
+      title="yc.facultycv: view PB dept committees"
+    />
+
+    <permission
+      id="yc.facultycv.view_college_vote"
+      title="yc.facultycv: View College Vote"
+    />
+
+    <permission
+      id="yc.facultycv.do_college_vote"
+      title="yc.facultycv: Do College Vote"
+    />
+
+    <permission
+      id="yc.facultycv.view_department_vote"
+      title="yc.facultycv: View Department Vote"
+    />
+
+    <permission
+      id="yc.facultycv.do_department_vote"
+      title="yc.facultycv: Do Department Vote"
+    />
+
+    <permission
+      id="yc.facultycv.show_view"
+      title="yc.facultycv: Show View"
+    />
+
+    <permission
+      id="yc.facultycv.EditAppeal"
+      title="yc.facultycv: Edit Appeal"
+      />
+
+    <permission
+      id="yc.facultycv.ViewAppeal"
+      title="yc.facultycv: View Appeal"
+      />
+
+    <permission
+      id="yc.facultycv.clear_votes"
+      title="yc.facultycv: Can Clear Votes"
+      />
+
+    <permission
+      id="yc.facultycv.PreviewFile"
+      title="yc.facultycv: Preview File"
+    />
+
+  </configure>
+
+</configure>

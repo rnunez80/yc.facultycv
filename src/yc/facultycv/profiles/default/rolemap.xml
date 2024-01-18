@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<rolemap>
+  <roles>
+    <role name="PBcollege"/>
+    <role name="PBdept"/>
+    <role name="PBdeptChair"/>
+    <role name="PBhead"/>
+    <role name="Manager"/>
+    <role name="Site Administrator"/>
+    <role name="Reviewer"/>
+  </roles>
+  <permissions>
+    <permission name="yc.facultycv: edit PB College Chair" acquire="False">
+      <role name="Manager"/>
+      <role name="PBhead"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="yc.facultycv: edit PB dept Chair" acquire="False">
+      <role name="Manager"/>
+      <role name="PBhead"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="yc.facultycv: edit PB memo" acquire="False">
+      <role name="Manager"/>
+      <role name="PBhead"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="yc.facultycv: view PB college committees" acquire="False">
+      <role name="Manager"/>
+      <role name="PBcollege"/>
+      <role name="PBdeptChair"/>
+      <role name="PBhead"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="yc.facultycv: view PB dept committees" acquire="False">
+      <role name="Manager"/>
+      <role name="PBcollege"/>
+      <role name="PBhead"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="yc.facultycv: Edit Appeal" acquire="False">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="yc.facultycv: View Appeal" acquire="False">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name='yc.facultycv: Do College Vote' acquire="True">
+      <role name="Manager"/>
+      <role name="PBcollege"/>
+      <role name="PBhead"/>
+      <role name="Reviewer"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name='yc.facultycv: View College Vote' acquire="True">
+      <role name="Manager"/>
+      <role name="PBcollege"/>
+      <role name="PBhead"/>
+      <role name="Reviewer"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name='yc.facultycv: Do Department Vote' acquire="True">
+      <role name="Manager"/>
+      <role name="PBhead"/>
+      <role name="Reviewer"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name='yc.facultycv: View Department Vote' acquire="True">
+      <role name="Manager"/>
+      <role name="PBhead" />
+    </permission>
+    <permission name='yc.facultycv: Can Clear Votes' acquire="True">
+      <role name="Manager"/>
+      <role name="PBhead"/>
+    </permission>
+    <permission name='yc.facultycv: Show View' acquire="True">
+      <role name="Manager"/>
+      <role name="PBhead"/>
+      <role name="Site Administrator"/>
+    </permission>
+
+    <permission name="yc.facultycv: Add College" acquire="False">
+      <role name="Manager"/>
+    </permission>
+    <permission name="yc.facultycv: Add Faculty" acquire="False">
+      <role name="Manager"/>
+      <role name="PBhead"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="yc.facultycv: Add Staff" acquire="False">
+      <role name="Manager"/>
+      <role name="PBhead"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="yc.facultycv: Add Pbaction" acquire="False">
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="PBcollege"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="yc.facultycv: Add Pbactionclt" acquire="False">
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="PBcollege"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="yc.facultycv: Add Pbactionleave" acquire="False">
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="PBcollege"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="yc.facultycv: Add Pbactionportfolioa" acquire="False">
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="PBcollege"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="yc.facultycv: Add Pbactionportfoliob" acquire="False">
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="PBcollege"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="yc.facultycv: Add Pbactionportfolioc" acquire="False">
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="PBcollege"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="yc.facultycv: Add Pbactionscholar" acquire="False">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+    </permission>
+     <permission name="yc.facultycv: Add Symposium Talk" acquire="False">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+    </permission>
+  </permissions>
+</rolemap>

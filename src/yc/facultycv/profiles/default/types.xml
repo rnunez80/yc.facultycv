@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object name="portal_types" meta_type="Plone Types Tool">
+  <property name="title">Controls the available contenttypes in your portal</property>
+  <object name="faculty2" meta_type="Dexterity FTI"/>
+  <object name="directory" meta_type="Dexterity FTI"/>
+  <object name="staff2" meta_type="Dexterity FTI"/>
+  <!-- -*- extra stuff goes here -*- -->
+  <object name="pbaction2" meta_type="Dexterity FTI"/>
+  <object name="pbactionclt2" meta_type="Dexterity FTI"/>
+  <object name="pbactionleave2" meta_type="Dexterity FTI"/>
+  <object name="pbactionportfolioa" meta_type="Dexterity FTI"/>
+  <object name="pbactionportfoliob" meta_type="Dexterity FTI"/>
+  <object name="pbactionportfolioc" meta_type="Dexterity FTI"/>
+  <object name="pbactionscholar2" meta_type="Dexterity FTI"/>
+  <object meta_type="Dexterity FTI" name="symposium_talk"/>
+  <object name="pb-reappointment-7" meta_type="Dexterity FTI"/>
+  <object name="pb-promotion-to-associate" meta_type="Dexterity FTI"/>
+  <object name="pb-reappointment-1" meta_type="Dexterity FTI"/>
+  <object name="pb-reappointment-2" meta_type="Dexterity FTI"/>
+  <object name="pb-reappointment-4" meta_type="Dexterity FTI"/>
+  <object name="pb-reappointment-5" meta_type="Dexterity FTI"/>
+  <object name="pb-reappointment-6" meta_type="Dexterity FTI"/>
+  <object name="pb-reappointment-3" meta_type="Dexterity FTI"/>
+  <object name="pb-reappointment-5-lecturer" meta_type="Dexterity FTI"/>
+  <object name="pb-clt" meta_type="Dexterity FTI"/>
+  <object name="pb-leave-request" meta_type="Dexterity FTI"/>
+  <object name="pb-promotion-full" meta_type="Dexterity FTI"/>
+  <object name="pb-scholar-incentive-award" meta_type="Dexterity FTI"/>
+  <object name="poe" meta_type="Dexterity FTI"/>
+</object>

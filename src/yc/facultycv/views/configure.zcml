@@ -1,0 +1,102 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="yc.facultycv">
+
+  -*- extra stuff goes here -*-
+
+  <browser:page
+    name="voltoimport"
+    for="zope.interface.Interface"
+    class=".voltoimport.VoltoImport"
+    permission="zope2.View"
+  />
+
+  <browser:page
+    name="voltomigration"
+    for="zope.interface.Interface"
+    class=".voltomigration.VoltoMigration"
+    permission="zope2.View"
+  />
+
+  <browser:page
+    name="overview-catalog-search"
+    for="*"
+    class=".overview_catalog_search.OverviewCatalogSearch"
+    template="overview_catalog_search.pt"
+    permission="zope2.View"
+  />
+
+  <browser:page
+    name="pb_action_portlet"
+    for="*"
+    template="pb_action_portlet.pt"
+    permission="zope2.View"
+  />
+
+
+  <browser:page
+    name="cvmigration"
+    for="*"
+    class=".cvmigration.Cvmigration"
+    template="cvmigration.pt"
+    permission="zope2.View"
+  />
+
+  <browser:page
+    name="overview"
+    for="*"
+    class=".overview.Overview"
+    template="overview.pt"
+    permission="zope2.View"
+  />
+
+  <browser:page
+    name="overview-staff"
+    for="*"
+    class=".overview_staff.OverviewStaff"
+    template="overview_staff.pt"
+    permission="zope2.View"
+  />
+  <browser:page
+    name="pbactiontypeview"
+    for="*"
+    class=".pbactiontypeview.Pbactiontypeview"
+    template="pbactiontypeview.pt"
+    permission="zope2.View"
+  />
+
+  <browser:page
+    name="profile-staff"
+    for="*"
+    class=".profile_staff.ProfileStaff"
+    template="profile_staff.pt"
+    permission="zope2.View"
+  />
+
+  <browser:page
+    name="enhanced-c-v"
+    for="*"
+    class=".enhanced_c_v.EnhancedCV"
+    template="enhanced_c_v.pt"
+    permission="zope2.View"
+  />
+
+  <browser:page
+    name="cv"
+    for="*"
+    class=".cv.Cv"
+    template="cv.pt"
+    permission="zope2.View"
+  />
+
+  <browser:page
+    name="profile-default"
+    for="*"
+    class=".profile_default.ProfileDefault"
+    template="profile_default.pt"
+    permission="zope2.View"
+  />
+
+
+</configure>

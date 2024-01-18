@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+   i18n:domain="plone"
+   metal:use-macro="context/main_template/macros/master">
+<body>
+
+<metal:block
+  fill-slot="main" tal:define="token view/token">
+  <div metal:define-macro="overview-catalog-search">
+    <!-- start P&B -->
+    <div tal:define="results context/@@overview-catalog-search/pb_actions; is_editable context/@@plone_context_state/is_editable;">
+      <div tal:condition="results">
+        <table class="table table-striped">
+          <tr>
+            <th><span tal:content="context/@@overview-catalog-search/last_name"> Title or id </span>'s P&amp;B Actions</th>
+          </tr>
+          <tr tal:repeat="obj results">
+            <td>
+              <a
+                href="" tal:attributes="href obj/URL" tal:content="obj/Title">[Title]</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div tal:condition="is_editable">
+        <a href=""
+           class="btn btn-success btn-block"  tal:attributes="href string:${context/absolute_url}/pbactiontypeview?_authenticator=${token}">Add
+          New P&amp;B Doc</a>
+      </div>
+      <div tal:condition="is_editable">
+        <a href="http://ycdirectory" class="btn btn-info btn-block">Contact Info (Intranet)</a>
+      </div>
+    </div>
+    <!-- end P&B -->
+  </div>
+</metal:block>
+</body>
+</html>

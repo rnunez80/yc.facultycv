@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layers>
+  <layer
+      name="yc.facultycv"
+      interface="yc.facultycv.interfaces.IYcFacultycvLayer"
+      />
+    <layer
+      name="yc.facultycv.college_vote"
+      interface="yc.facultycv.interfaces.ICollegeVoteLayer"
+      />
+    <layer
+      name="yc.facultycv.department_vote"
+      interface="yc.facultycv.interfaces.IDepartmentVoteLayer"
+      />
+</layers>

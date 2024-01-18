@@ -1,0 +1,16 @@
+<div metal:define-macro="overview-staff" tal:define="token view/token;">
+
+  <div>
+    <div>
+      <div tal:define="image nocall:context/image"
+         tal:condition="nocall:image">
+        <img tal:attributes="src string:${context/absolute_url}/@@download/image/${image/filename};
+          height image/_height | nothing;
+          width image/_width | nothing;" alt="no photo"
+        />
+      </div>
+
+
+    </div>
+  </div>
+</div>

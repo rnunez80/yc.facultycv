@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+   i18n:domain="plone"
+   metal:use-macro="context/main_template/macros/master">
+<head>
+  <title>${context/Title}</title>
+</head>
+<body>
+
+<metal:block fill-slot="main" tal:define="token view/token">
+  <div metal:define-macro="overview">
+    <div>
+      <div>
+        <div>
+          <!-- start photo -->
+          <div tal:define="image nocall:context/image"
+             tal:condition="nocall:image">
+            <img tal:attributes="src string:${context/absolute_url}/@@download/image/${image/filename};
+              height image/_height | nothing;
+              width image/_width | nothing;" alt="${context/Title}"
+            />
+            <img src="/image/YCdefaultUser.jpg/image_profile" alt="no photo"  tal:condition="not:context/image" />
+            <div style="clear:both">&nbsp;</div>
+          </div>
+          <!-- end photo -->
+         <div metal:use-macro="context/@@overview-catalog-search/overview-catalog-search"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</metal:block>
+</body>
+</html>

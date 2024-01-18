@@ -1,0 +1,215 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  xmlns:i18n="http://namespaces.zope.org/i18n"
+  i18n_domain="yc.facultycv">
+
+  <i18n:registerTranslations directory="locales"/>
+
+  <!--
+    Be careful if you use general includeDependencies, it can have sideffects!
+    Better import explicite packages or configurations ;)
+  -->
+  <!--  <includeDependencies package="."/>-->
+
+  <include package=".browser"/>
+
+  <include file="permissions.zcml"/>
+
+
+  <genericsetup:registerProfile
+    name="default"
+    title="yc.facultycv"
+    directory="profiles/default"
+    description="Installs the yc.facultycv add-on."
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    post_handler=".setuphandlers.post_install"
+  />
+
+  <genericsetup:registerProfile
+    name="uninstall"
+    title="yc.facultycv (uninstall)"
+    directory="profiles/uninstall"
+    description="Uninstalls the yc.facultycv add-on."
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    post_handler=".setuphandlers.uninstall"
+  />
+
+  <utility
+    factory=".setuphandlers.HiddenProfiles"
+    name="yc.facultycv-hiddenprofiles"
+  />
+
+  <!-- -*- extra stuff goes here -*- -->
+
+  <include package=".viewlets"/>
+
+  <include package=".behaviors"/>
+
+  <include package=".vocabularies"/>
+  <include package=".api"/>
+
+  <include package=".views"/>
+
+  <subscriber
+    for="yc.facultycv.content.pbaction.IPbaction
+          zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".event_handlers.pbActionModified"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionclt.IPbactionclt
+          zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".event_handlers.pbActionModified"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionleave.IPbactionleave
+          zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".event_handlers.pbActionModified"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionportfolioa.IPbactionportfolioa
+          zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".event_handlers.pbActionModified"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionportfoliob.IPbactionportfoliob
+          zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".event_handlers.pbActionModified"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionportfolioc.IPbactionportfolioc
+          zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".event_handlers.pbActionModified"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionscholar.IPbactionscholar
+          zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".event_handlers.pbActionModified"
+  />
+
+<!--  <subscriber-->
+<!--    for="yc.facultycv.interfaces.ICollegeVote-->
+<!--       zope.lifecycleevent.IObjectModifiedEvent"-->
+<!--    handler=".event_handlers.college_update"-->
+<!--  />-->
+
+<!--  <subscriber-->
+<!--    for="yc.facultycv.interfaces.IDepartmentVote-->
+<!--       zope.lifecycleevent.IObjectModifiedEvent"-->
+<!--    handler=".event_handlers.department_update"-->
+<!--  />-->
+
+  <subscriber
+    for="yc.facultycv.content.pbaction.IPbaction
+          zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".event_handlers.set_managers_modified"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionclt.IPbactionclt
+          zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".event_handlers.set_managers_modified"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionleave.IPbactionleave
+          zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".event_handlers.set_managers_modified"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionportfolioa.IPbactionportfolioa
+          zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".event_handlers.set_managers_modified"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionportfoliob.IPbactionportfoliob
+          zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".event_handlers.set_managers_modified"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionportfolioc.IPbactionportfolioc
+          zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".event_handlers.set_managers_modified"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionscholar.IPbactionscholar
+          zope.lifecycleevent.IObjectModifiedEvent"
+    handler=".event_handlers.set_managers_modified"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.symposium_talk.ISymposiumTalk
+          zope.lifecycleevent.IObjectAddedEvent"
+    handler=".event_handlers.set_managers_modified"
+  />
+  <subscriber
+    for="yc.facultycv.content.pbaction.IPbaction
+          zope.lifecycleevent.IObjectAddedEvent"
+    handler=".event_handlers.set_managers_added"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionclt.IPbactionclt
+          zope.lifecycleevent.IObjectAddedEvent"
+    handler=".event_handlers.set_managers_added"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionleave.IPbactionleave
+          zope.lifecycleevent.IObjectAddedEvent"
+    handler=".event_handlers.set_managers_added"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionportfolioa.IPbactionportfolioa
+          zope.lifecycleevent.IObjectAddedEvent"
+    handler=".event_handlers.set_managers_added"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionportfoliob.IPbactionportfoliob
+          zope.lifecycleevent.IObjectAddedEvent"
+    handler=".event_handlers.set_managers_added"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionportfolioc.IPbactionportfolioc
+          zope.lifecycleevent.IObjectAddedEvent"
+    handler=".event_handlers.set_managers_added"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.pbactionscholar.IPbactionscholar
+          zope.lifecycleevent.IObjectAddedEvent"
+    handler=".event_handlers.set_managers_added"
+  />
+
+    <subscriber
+    for="yc.facultycv.content.symposium_talk.ISymposiumTalk
+          zope.lifecycleevent.IObjectAddedEvent"
+    handler=".event_handlers.set_managers_added"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.faculty.IFaculty
+          zope.lifecycleevent.IObjectAddedEvent"
+    handler=".event_handlers.set_faculty_managers_added"
+  />
+
+  <subscriber
+    for="yc.facultycv.content.faculty.IFaculty
+          zope.lifecycleevent.IObjectAddedEvent"
+    handler=".event_handlers.set_faculty_managers_modified"
+  />
+
+</configure>

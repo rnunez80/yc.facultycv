@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dc-workflow workflow_id="employee" title="Employee Workflow" description="" state_variable="review_state" initial_state="published" manager_bypass="False">
+ <permission>Access contents information</permission>
+ <permission>Change portal events</permission>
+ <permission>Modify portal content</permission>
+ <permission>View</permission>
+ <permission>iterate : Check in content</permission>
+ <permission>iterate : Check out content</permission>
+ <state state_id="archived" title="Archived">
+  <exit-transition transition_id="makeemeriti"/>
+  <exit-transition transition_id="publish"/>
+  <exit-transition transition_id="reject"/>
+  <permission-map name="Access contents information" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="iterate : Check in content" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="iterate : Check out content" acquired="False">
+  </permission-map>
+ </state>
+ <state state_id="emeriti" title="Emeriti">
+  <exit-transition transition_id="archived"/>
+  <exit-transition transition_id="publish"/>
+  <exit-transition transition_id="reject"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>Anonymous</permission-role>
+   <permission-role>Authenticated</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="iterate : Check in content" acquired="False">
+   <permission-role>Anonymous</permission-role>
+   <permission-role>Authenticated</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="iterate : Check out content" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="private" title="Private">
+  <exit-transition transition_id="archived"/>
+  <exit-transition transition_id="makeemeriti"/>
+  <exit-transition transition_id="publish"/>
+  <permission-map name="Access contents information" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="iterate : Check in content" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="iterate : Check out content" acquired="False">
+  </permission-map>
+ </state>
+ <state state_id="published" title="Published">
+  <exit-transition transition_id="archived"/>
+  <exit-transition transition_id="makeemeriti"/>
+  <exit-transition transition_id="reject"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>Anonymous</permission-role>
+   <permission-role>Authenticated</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>Anonymous</permission-role>
+   <permission-role>Authenticated</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="iterate : Check in content" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="iterate : Check out content" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="yc.facultycv: Add Pbaction" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+  </permission-map>
+ </state>
+ <transition transition_id="archived" title="Archive" new_state="archived" trigger="USER" before_script="" after_script="">
+  <description>content is store privately where it wont transition back to publish if account is active</description>
+  <action url="" category="workflow" icon="">Archive</action>
+  <guard>
+   <guard-role>Site Administrator</guard-role>
+   <guard-role>Manager</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="makeemeriti" title="Make Emeriti" new_state="emeriti" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action= makeemeriti" category="workflow" icon="">Emeriti</action>
+  <guard>
+   <guard-role>Site Administrator</guard-role>
+   <guard-role>Manager</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="publish" title="Reviewer publishes content" new_state="published" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=publish" category="workflow" icon="">Publish</action>
+  <guard>
+   <guard-role>Site Administrator</guard-role>
+   <guard-role>Manager</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="reject" title="Reviewer rejects submission" new_state="private" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">Reject</action>
+  <guard>
+   <guard-role>Site Administrator</guard-role>
+   <guard-role>Manager</guard-role>
+  </guard>
+ </transition>
+ <worklist worklist_id="reviewer_queue" title="">
+  <description>Reviewer tasks</description>
+  <action url="%(portal_url)s/search?review_state=pending" category="global" icon="">Pending (%(count)d)</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+  <match name="review_state" values="pending"/>
+ </worklist>
+ <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
+  <description>The last transition</description>
+  <default>
+   
+   <expression>transition/getId|nothing</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="actor" for_catalog="False" for_status="True" update_always="True">
+  <description>The ID of the user who performed the last transition</description>
+  <default>
+   
+   <expression>user/getId</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="comments" for_catalog="False" for_status="True" update_always="True">
+  <description>Comments about the last transition</description>
+  <default>
+   
+   <expression>python:state_change.kwargs.get('comment', '')</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="review_history" for_catalog="False" for_status="False" update_always="False">
+  <description>Provides access to workflow history</description>
+  <default>
+   
+   <expression>state_change/getHistory</expression>
+  </default>
+  <guard>
+   <guard-permission>Request review</guard-permission>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </variable>
+ <variable variable_id="time" for_catalog="False" for_status="True" update_always="True">
+  <description>Time of the last transition</description>
+  <default>
+   
+   <expression>state_change/getDateTime</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <script script_id="notify_published" type="Script (Python)" filename="workflows/employee/scripts/notify_published.py" module="" function=""/>
+ <script script_id="notify_rejected" type="Script (Python)" filename="workflows/employee/scripts/notify_rejected.py" module="" function=""/>
+ <script script_id="notify_submitted" type="Script (Python)" filename="workflows/employee/scripts/notify_submitted.py" module="" function=""/>
+</dc-workflow>

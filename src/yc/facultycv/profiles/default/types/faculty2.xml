@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="faculty2" meta_type="Dexterity FTI" i18n:domain="plone"
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+  <property name="title" i18n:translate="">faculty</property>
+  <property name="description"
+            i18n:translate="">A dexterity content type designed to help YC faculty submit their CV&#x27;s.
+  </property>
+  <property name="icon_expr">string:${portal_url}/document_icon.png</property>
+  <property name="factory">faculty</property>
+  <property name="add_view_expr">string:${folder_url}/++add++faculty2</property>
+  <property name="link_target"></property>
+  <property name="immediate_view">profile-default</property>
+  <property name="global_allow">False</property>
+  <property name="filter_content_types">True</property>
+  <property name="allowed_content_types">
+    <element value="pbaction2"/>
+    <element value="pbactionclt2"/>
+    <element value="pbactionleave2"/>
+    <element value="pbactionportfolioa"/>
+    <element value="pbactionportfoliob"/>
+    <element value="pbactionportfolioc"/>
+    <element value="pbactionscholar2"/>
+    <element value="symposium_talk"/>
+    <element value="pb-reappointment-7"/>
+    <element value="pb-promotion-to-associate"/>
+    <element value="pb-reappointment-1"/>
+    <element value="pb-reappointment-2"/>
+    <element value="pb-reappointment-4"/>
+    <element value="pb-reappointment-5"/>
+    <element value="pb-reappointment-6"/>
+    <element value="pb-reappointment-3"/>
+    <element value="pb-reappointment-5-lecturer"/>
+    <element value="pb-clt"/>
+    <element value="pb-leave-request"/>
+    <element value="pb-promotion-full"/>
+    <element value="pb-scholar-incentive-award"/>
+  </property>
+  <property name="allow_discussion">False</property>
+  <property name="default_view">profile-default</property>
+  <property name="view_methods" purge="False">
+    <element value="cv"/>
+    <element value="enhanced-c-v"/>
+    <element value="profile-default"/>
+  </property>
+  <property name="default_view_fallback">False</property>
+  <property name="add_permission">yc.facultycv.AddFaculty</property>
+  <property name="klass">yc.facultycv.content.faculty.Faculty</property>
+  <property name="behaviors" purge="False">
+    <element value="plone.locking"/>
+  </property>
+  <property name="schema">yc.facultycv.content.faculty.IFaculty</property>
+  <property name="model_source"></property>
+  <property name="model_file"></property>
+  <property name="schema_policy">dexterity</property>
+  <alias from="(Default)" to="(dynamic view)"/>
+  <alias from="edit" to="@@edit"/>
+  <alias from="sharing" to="@@sharing"/>
+  <alias from="view" to="(selected layout)"/>
+  <action title="View" action_id="view" category="object" condition_expr=""
+          description="" icon_expr="" link_target="" url_expr="string:${object_url}"
+          visible="True">
+    <permission value="View"/>
+  </action>
+  <action title="Edit" action_id="edit" category="object" condition_expr=""
+          description="" icon_expr="" link_target=""
+          url_expr="string:${object_url}/edit" visible="True">
+    <permission value="Modify portal content"/>
+  </action>
+</object>

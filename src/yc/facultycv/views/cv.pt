@@ -1,0 +1,871 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en" metal:use-macro="context/main_template/macros/master" i18n:domain="plone">
+<body>
+<div metal:fill-slot="main">
+  <div metal:define-macro="body">
+    <tal:main-macro metal:define-macro="main">
+      <div  tal:condition="not:context/hidecv" tal:define="object_title context/@@plone_context_state/object_title; is_chair view/is_chair; is_acting_chair view/is_acting_chair;">
+        <div class="row-fluid">
+          <div class="span6"><h1 class="documentFirstHeading visualNoPrint"><span tal:content="object_title"> Title or id </span>
+          </h1></div>
+          <div class="span6">
+            <div class="btn-group" tal:define="current_url context/absolute_url">
+              <a class="btn" href="" tal:attributes="href current_url">Overview</a>
+              <button type="button" class="btn" disabled>Curriculum Vitae</button>
+              <a tal:condition="python:checkPermission('Modify portal content', context)" class="btn"
+                                                                                       href="" tal:attributes="href python:current_url+'/enhanced-c-v'">Enhanced
+                Curriculum Vitae</a>
+            </div>
+          </div>
+        </div>
+
+
+        <h2>Curriculum Vitae</h2>
+        <ol>
+          <li><h3>Education</h3><br/>
+            <table class="table" tal:condition="context/education">
+              <tr>
+                <th scope="col">Degree</th>
+                <th scope="col">Institution</th>
+                <th scope="col">Field</th>
+                <th scope="col">Dates</th>
+              </tr>
+              <tal:areas repeat="area context/education">
+                <tr tal:define="Degree area/degree;
+                  Institution area/institution;
+                  Area area/area;
+                  Year area/year;
+                  ">
+                  <td><span tal:replace="Degree">Degree</span>&nbsp;</td>
+                  <td><span tal:replace="Institution">Institution</span>&nbsp;</td>
+                  <td><span tal:replace="Area">Area</span>&nbsp;</td>
+                  <td><span tal:replace="Year">Year</span>&nbsp;</td>
+                </tr>
+              </tal:areas>
+            </table>
+          </li>
+          <li><h3>Full-Time Academic Experience</h3><br/>
+            <table class="table" tal:condition="context/experienceFT">
+              <tr>
+                <th scope="col">Institution</th>
+                <th scope="col">Rank</th>
+                <th scope="col">Field</th>
+                <th scope="col">Dates</th>
+              </tr>
+              <tal:areas repeat="area context/experienceFT">
+                <tr tal:define="Rank area/rank;
+                  Institution area/institution;
+                  Area area/area;
+                  Year area/dates;
+                  ">
+                  <td><span tal:replace="Institution">Institution</span>&nbsp;</td>
+                  <td><span tal:replace="Rank">Rank</span>&nbsp;</td>
+                  <td><span tal:replace="Area">Area</span>&nbsp;</td>
+                  <td><span tal:replace="Year">Dates</span>&nbsp;</td>
+                </tr>
+              </tal:areas>
+            </table>
+
+          </li>
+          <li><h3>Part-Time Academic Experience</h3><br/>
+            <table class="table" tal:condition="context/experiencePT">
+              <tr>
+                <th scope="col">Institution</th>
+                <th scope="col">Rank</th>
+                <th scope="col">Field</th>
+                <th scope="col">Dates</th>
+              </tr>
+              <tal:areas repeat="area context/experiencePT">
+                <tr tal:define="Rank area/rank;
+                  Institution area/institution;
+                  Area area/area;
+                  Year area/dates;
+                  ">
+                  <td><span tal:replace="Institution">Institution</span>&nbsp;</td>
+                  <td><span tal:replace="Rank">Rank</span>&nbsp;</td>
+                  <td><span tal:replace="Area">Area</span>&nbsp;</td>
+                  <td><span tal:replace="Year">Dates</span>&nbsp;</td>
+                </tr>
+              </tal:areas>
+            </table>
+          </li>
+          <li><h3>Non Academic Experience</h3><br/>
+            <table class="table" tal:condition="context/experienceNA">
+              <tr>
+                <th scope="col">Place of Employment</th>
+                <th scope="col">Title</th>
+                <th scope="col">Date</th>
+              </tr>
+              <tal:areas repeat="area context/experienceNA">
+                <tr tal:define="Rank area/rank;
+                  Institution area/institution;
+                  Year area/dates;
+                  ">
+                  <td><span tal:replace="Institution">Institution</span>&nbsp;</td>
+                  <td><span tal:replace="Rank">Rank</span>&nbsp;</td>
+                  <td><span tal:replace="Year">Dates</span>&nbsp;</td>
+                </tr>
+              </tal:areas>
+            </table>
+          </li>
+          <li><h3>Employment Record At This Institution</h3>
+            <table class="table" tal:condition="context/employmentRecord">
+              <tr>
+                <th>Rank</th>
+                <th>Dates</th>
+              </tr>
+              <tal:areas repeat="area context/employmentRecord">
+                <tr tal:define="Rank area/rank;
+                  Year area/dates;
+                  ">
+                  <td><span tal:replace="Rank">Rank</span>&nbsp;</td>
+                  <td><span tal:replace="Year">Dates</span>&nbsp;</td>
+                </tr>
+              </tal:areas>
+            </table>
+          </li>
+          <li><h3>Publications In Field Of Expertise</h3>
+            <ol type="A">
+              <li> Books:<br/>
+                <tal:areas repeat="area context/books" tal:condition="context/books">
+                  <div tal:define="
+                    authors area/authors;
+                    title area/title;
+                    publisher area/publisher;
+                    place area/place;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status"  tal:condition="python: status.startswith('ife')"><p>
+                    <span tal:replace="authors">authors</span>. <u tal:content="title">title</u>.
+                    <span tal:replace="place">place</span>: <span tal:replace="publisher">publisher</span>,
+                    <span tal:replace="date">date</span>. <span tal:replace="pages">pages</span>.</p>
+                  </div>
+                </tal:areas>
+              </li>
+              <li>Papers in Professional Journals:
+                <ol>
+                  <li> Articles:<br/>
+                    <tal:areas repeat="area context/articles" tal:condition="context/articles">
+                      <div tal:define="
+                        authors area/authors;
+                        journalTitle area/journalTitle;
+                        title area/title;
+                        volume area/volume;
+                        date area/date;
+                        pages area/pages;
+                        reference area/reference;
+                        status area/status" tal:condition="python: status.startswith('ife')"><p>
+                        <span tal:replace="authors">authors</span>. &quot;<span tal:replace="title">title</span>.&quot;
+                        <u tal:content="journalTitle">journal Title</u>. <span tal:replace="volume">volume</span>
+                        <span tal:replace="date">date</span>: <span tal:replace="pages">pages</span>. </p>
+                      </div>
+                    </tal:areas>
+                  </li>
+                  <li>Proceedings:
+                    <ol type="a">
+                      <li> Refereed Proceedings <br/>
+                        <tal:areas
+                          repeat="area context/refereedProceedings" tal:condition="context/refereedProceedings">
+                          <div tal:define="
+                            authors area/authors;
+                            journalTitle area/journalTitle;
+                            title area/title;
+                            volume area/volume;
+                            date area/date;
+                            pages area/pages;
+                            reference area/reference;
+                            status area/status" tal:condition="python: status.startswith('ife')"><p>
+                            <span tal:replace="authors">authors</span>. &quot;<span tal:replace="title">title</span>.&quot;
+                            <u tal:content="journalTitle">journal Title</u>. <span tal:replace="volume">volume</span>
+                            <span tal:replace="date">date</span>: <span tal:replace="pages">pages</span>. </p>
+                          </div>
+                        </tal:areas>
+                      </li>
+                      <li>Non-Refereed Proceedings<br/>
+                        <tal:areas
+                          repeat="area context/nonRefereedProceedings" tal:condition="context/nonRefereedProceedings">
+                          <div tal:define="
+                            authors area/authors;
+                            journalTitle area/journalTitle;
+                            title area/title;
+                            volume area/volume;
+                            date area/date;
+                            pages area/pages;
+                            reference area/reference;
+                            status area/status" tal:condition="python: status.startswith('ife')"><p>
+                            <span tal:replace="authors">authors</span>. &quot;<span tal:replace="title">title</span>.&quot;
+                            <u tal:content="journalTitle">journal Title</u>. <span tal:replace="volume">volume</span>
+                            <span tal:replace="date">date</span>: <span tal:replace="pages">pages</span>. </p>
+                          </div>
+                        </tal:areas>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>Chapters in Books:<br/>
+                <tal:areas repeat="area context/chapters" tal:condition="context/chapters">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('ife')"><p><span tal:replace="authors">authors</span>.
+                    &quot;<span tal:replace="title">title</span>.&quot; <u tal:content="journalTitle">journal Title</u>.
+                    <span tal:replace="volume">volume</span> <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+              </li>
+              <li>Government Reports or Monographs<br/>
+                <tal:areas repeat="area context/monographs" tal:condition="context/monographs">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('ife')"><p><span tal:replace="authors">authors</span>.
+                    &quot;<span tal:replace="title">title</span>.&quot; <u tal:content="journalTitle">journal Title</u>.
+                    <span tal:replace="volume">volume</span> <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+              </li>
+              <li>Book Reviews: <br/>
+                <tal:areas repeat="area context/reviews" tal:condition="context/reviews">
+                  <div tal:define="
+                    publication area/publication;
+                    date area/date;
+                    pages area/pages;
+                    status area/status" tal:condition="python: status.startswith('ife')"><p>
+                    &quot;<span tal:replace="publication">publication</span>&quot; <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+                </tal:areas>
+              </li>
+            </ol>
+          </li>
+          <li><h3>Other Publications</h3>
+            <ol type="A">
+              <li> Books:<br/>
+                <tal:areas repeat="area context/books" tal:condition="context/books">
+                  <div tal:define="
+                    authors area/authors;
+                    title area/title;
+                    publisher area/publisher;
+                    place area/place;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('other')"><p>
+                    <span tal:replace="authors">authors</span>. <u tal:content="title">title</u>.
+                    <span tal:replace="place">place</span>: <span tal:replace="publisher">publisher</span>,
+                    <span tal:replace="date">date</span>. <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+              </li>
+              <li>Papers in Professional Journals:
+                <ol>
+                  <li> Articles:<br/>
+                    <tal:areas repeat="area context/articles" tal:condition="context/articles">
+                      <div tal:define="
+                        authors area/authors;
+                        journalTitle area/journalTitle;
+                        title area/title;
+                        volume area/volume;
+                        date area/date;
+                        pages area/pages;
+                        reference area/reference;
+                        status area/status" tal:condition="python: status.startswith('other')"><p>
+                        <span tal:replace="authors">authors</span>. &quot;<span tal:replace="title">title</span>.&quot;
+                        <u tal:content="journalTitle">journal Title</u>. <span tal:replace="volume">volume</span>
+                        <span tal:replace="date">date</span>: <span tal:replace="pages">pages</span>. </p>
+                      </div>
+
+                    </tal:areas>
+                  </li>
+                  <li>Proceedings:
+                    <ol type="a">
+                      <li> Refereed Proceedings <br/>
+                        <tal:areas
+                          repeat="area context/refereedProceedings" tal:condition="context/refereedProceedings">
+                          <div tal:define="
+                            authors area/authors;
+                            journalTitle area/journalTitle;
+                            title area/title;
+                            volume area/volume;
+                            date area/date;
+                            pages area/pages;
+                            reference area/reference;
+                            status area/status" tal:condition="python: status.startswith('other')"><p>
+                            <span tal:replace="authors">authors</span>. &quot;<span tal:replace="title">title</span>.&quot;
+                            <u tal:content="journalTitle">journal Title</u>. <span tal:replace="volume">volume</span>
+                            <span tal:replace="date">date</span>: <span tal:replace="pages">pages</span>. </p>
+                          </div>
+
+                        </tal:areas>
+                      </li>
+                      <li>Non-Refereed Proceedings<br/>
+                        <tal:areas
+                          repeat="area context/nonRefereedProceedings" tal:condition="context/nonRefereedProceedings">
+                          <div tal:define="
+                            authors area/authors;
+                            journalTitle area/journalTitle;
+                            title area/title;
+                            volume area/volume;
+                            date area/date;
+                            pages area/pages;
+                            reference area/reference;
+                            status area/status" tal:condition="python: status.startswith('other')"><p>
+                            <span tal:replace="authors">authors</span>. &quot;<span tal:replace="title">title</span>.&quot;
+                            <u tal:content="journalTitle">journal Title</u>. <span tal:replace="volume">volume</span>
+                            <span tal:replace="date">date</span>: <span tal:replace="pages">pages</span>. </p>
+                          </div>
+
+                        </tal:areas>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+
+              <li>Chapters in Books:<br/>
+                <tal:areas repeat="area context/chapters" tal:condition="context/chapters">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('other')"><p>
+                    <span tal:replace="authors">authors</span>. &quot;<span tal:replace="title">title</span>.&quot;
+                    <u tal:content="journalTitle">journal Title</u>. <span tal:replace="volume">volume</span>
+                    <span tal:replace="date">date</span>: <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+              </li>
+              <li>Government Reports or Monographs<br/>
+                <tal:areas repeat="area context/monographs" tal:condition="context/monographs">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('other')"><p>
+                    <span tal:replace="authors">authors</span>. &quot;<span tal:replace="title">title</span>.&quot;
+                    <u tal:content="journalTitle">journal Title</u>. <span tal:replace="volume">volume</span>
+                    <span tal:replace="date">date</span>: <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+              </li>
+              <li>Book Reviews: <br/>
+                <tal:areas repeat="area context/reviews" tal:condition="context/reviews">
+                  <div tal:define="
+                    publication area/publication;
+                    date area/date;
+                    pages area/pages;
+                    status area/status" tal:condition="python: status.startswith('other')"><p>
+                    &quot;<span tal:replace="publication">publication</span>&quot; <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+              </li>
+            </ol>
+          </li>
+          <li><h3>Presented Papers, Lectures, And Exhibitions And Performances</h3>
+            <tal:areas repeat="area context/presented" tal:condition="context/presented">
+              <div tal:define="
+                title area/title;
+                date area/date;
+                audience area/audience"><p>&quot;<span tal:replace="title">title</span>&quot; <span tal:replace="date">date</span>:
+                <span tal:replace="audience">audience</span>. </p>
+              </div>
+
+            </tal:areas>
+          </li>
+          <li><h3>Patents</h3>
+            <p tal:condition="not:context/patents">None</p>
+            <tal:areas repeat="area context/patents" tal:condition="context/patents">
+              <div tal:define="
+                title area/title;
+                date area/date;
+                patent area/patent;
+                inventor area/inventor;
+                filed area/filed;
+                issue area/issue;
+                country area/country;
+                url area/url"><p><span tal:replace="inventor">inventor</span>. <span tal:replace="date">date</span>.
+                <span tal:replace="title" tal:condition="not: url">title</span><a
+                  href="" tal:attributes="href url" tal:condition="url"  tal:content="title">title</a>.
+                <span tal:replace="country">country</span> Patent
+                <span tal:replace="patent">patent</span><span tal:condition="filed">, filed </span><span tal:replace="filed">filed</span><span tal:condition="issue">, and issued </span><span tal:replace="issue">issue</span>.
+              </p>
+              </div>
+            </tal:areas>
+          </li>
+          <li><h3>Work In Progress</h3>
+            <ol type="A">
+              <li>Books in progress:<br/>
+                <tal:areas repeat="area context/books" tal:condition="context/books">
+                  <div tal:define="
+                    authors area/authors;
+                    title area/title;
+                    publisher area/publisher;
+                    place area/place;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status"  tal:condition="python: status.startswith('wip')"><p>
+                    <span tal:replace="authors">authors</span>. <u tal:content="title">title</u>.
+                    <span tal:replace="place">place</span>: <span tal:replace="publisher">publisher</span>,
+                    <span tal:replace="date">date</span>. <span tal:replace="pages">pages</span>.</p>
+                  </div>
+                </tal:areas>
+              </li>
+              <li>Papers in Progress:<br/>
+                <tal:areas repeat="area context/articles" tal:condition="context/articles">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('wip')"><p><span tal:replace="authors">authors</span>.
+                    &quot;<span tal:replace="title">title</span>.&quot; <u tal:content="journalTitle">journal Title</u>.
+                    <span tal:replace="volume">volume</span> <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+                <tal:areas repeat="area context/refereedProceedings" tal:condition="context/refereedProceedings">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('wip')"><p><span tal:replace="authors">authors</span>.
+                    &quot;<span tal:replace="title">title</span>.&quot; <u tal:content="journalTitle">journal Title</u>.
+                    <span tal:replace="volume">volume</span> <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+                <tal:areas repeat="area context/nonRefereedProceedings" tal:condition="context/nonRefereedProceedings">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('wip')"><p><span tal:replace="authors">authors</span>.
+                    &quot;<span tal:replace="title">title</span>.&quot; <u tal:content="journalTitle">journal Title</u>.
+                    <span tal:replace="volume">volume</span> <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+                <tal:areas repeat="area context/chapters" tal:condition="context/chapters">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('wip')"><p><span tal:replace="authors">authors</span>.
+                    &quot;<span tal:replace="title">title</span>.&quot; <u tal:content="journalTitle">journal Title</u>.
+                    <span tal:replace="volume">volume</span> <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+                <tal:areas repeat="area context/monographs" tal:condition="context/monographs">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('wip')"><p><span tal:replace="authors">authors</span>.
+                    &quot;<span tal:replace="title">title</span>.&quot; <u tal:content="journalTitle">journal Title</u>.
+                    <span tal:replace="volume">volume</span> <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+                <tal:areas repeat="area context/reviews" tal:condition="context/reviews">
+                  <div tal:define="
+                    publication area/publication;
+                    date area/date;
+                    pages area/pages;
+                    status area/status" tal:condition="python: status.startswith('wip')"><p>
+                    &quot;<span tal:replace="publication">publication</span>&quot; <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+              </li>
+              <li>Papers submitted to journals for consideration:<br/>
+                <tal:areas repeat="area context/books" tal:condition="context/books">
+                  <div tal:define="
+                    authors area/authors;
+                    title area/title;
+                    publisher area/publisher;
+                    place area/place;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status"  tal:condition="python: status.startswith('submitted')"><p>
+                    <span tal:replace="authors">authors</span>. <u tal:content="title">title</u>.
+                    <span tal:replace="place">place</span>: <span tal:replace="publisher">publisher</span>,
+                    <span tal:replace="date">date</span>. <span tal:replace="pages">pages</span>.</p>
+                  </div>
+                </tal:areas>
+
+                <tal:areas repeat="area context/articles" tal:condition="context/articles">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('submitted')"><p>
+                    <span tal:replace="authors">authors</span>. &quot;<span tal:replace="title">title</span>.&quot;
+                    <u tal:content="journalTitle">journal Title</u>. <span tal:replace="volume">volume</span>
+                    <span tal:replace="date">date</span>: <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+                <tal:areas repeat="area context/refereedProceedings" tal:condition="context/refereedProceedings">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('submitted')"><p>
+                    <span tal:replace="authors">authors</span>. &quot;<span tal:replace="title">title</span>.&quot;
+                    <u tal:content="journalTitle">journal Title</u>. <span tal:replace="volume">volume</span>
+                    <span tal:replace="date">date</span>: <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+                <tal:areas repeat="area context/nonRefereedProceedings" tal:condition="context/nonRefereedProceedings">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('submitted')"><p>
+                    <span tal:replace="authors">authors</span>. &quot;<span tal:replace="title">title</span>.&quot;
+                    <u tal:content="journalTitle">journal Title</u>. <span tal:replace="volume">volume</span>
+                    <span tal:replace="date">date</span>: <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+                <tal:areas repeat="area context/chapters" tal:condition="context/chapters">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('submitted')"><p>
+                    <span tal:replace="authors">authors</span>. &quot;<span tal:replace="title">title</span>.&quot;
+                    <u tal:content="journalTitle">journal Title</u>. <span tal:replace="volume">volume</span>
+                    <span tal:replace="date">date</span>: <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+                <tal:areas repeat="area context/monographs" tal:condition="context/monographs">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('submitted')"><p>
+                    <span tal:replace="authors">authors</span>. &quot;<span tal:replace="title">title</span>.&quot;
+                    <u tal:content="journalTitle">journal Title</u>. <span tal:replace="volume">volume</span>
+                    <span tal:replace="date">date</span>: <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+                <tal:areas repeat="area context/reviews" tal:condition="context/reviews">
+                  <div tal:define="
+                    publication area/publication;
+                    date area/date;
+                    pages area/pages;
+                    status area/status" tal:condition="python: status.startswith('submitted')"><p>
+                    &quot;<span tal:replace="publication">publication</span>&quot; <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+              </li>
+
+              <li>Research in progress:<br/>
+
+                <tal:areas repeat="area context/articles" tal:condition="context/articles">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('rip')"><p><span tal:replace="authors">authors</span>.
+                    &quot;<span tal:replace="title">title</span>.&quot; <u tal:content="journalTitle">journal Title</u>.
+                    <span tal:replace="volume">volume</span> <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+                <tal:areas repeat="area context/refereedProceedings" tal:condition="context/refereedProceedings">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('rip')"><p><span tal:replace="authors">authors</span>.
+                    &quot;<span tal:replace="title">title</span>.&quot; <u tal:content="journalTitle">journal Title</u>.
+                    <span tal:replace="volume">volume</span> <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+
+                <tal:areas repeat="area context/nonRefereedProceedings" tal:condition="context/nonRefereedProceedings">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('rip')"><p><span tal:replace="authors">authors</span>.
+                    &quot;<span tal:replace="title">title</span>.&quot; <u tal:content="journalTitle">journal Title</u>.
+                    <span tal:replace="volume">volume</span> <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+                <tal:areas repeat="area context/chapters" tal:condition="context/chapters">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('rip')"><p><span tal:replace="authors">authors</span>.
+                    &quot;<span tal:replace="title">title</span>.&quot; <u tal:content="journalTitle">journal Title</u>.
+                    <span tal:replace="volume">volume</span> <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+                <tal:areas repeat="area context/monographs" tal:condition="context/monographs">
+                  <div tal:define="
+                    authors area/authors;
+                    journalTitle area/journalTitle;
+                    title area/title;
+                    volume area/volume;
+                    date area/date;
+                    pages area/pages;
+                    reference area/reference;
+                    status area/status" tal:condition="python: status.startswith('rip')"><p><span tal:replace="authors">authors</span>.
+                    &quot;<span tal:replace="title">title</span>.&quot; <u tal:content="journalTitle">journal Title</u>.
+                    <span tal:replace="volume">volume</span> <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+
+                <tal:areas repeat="area context/reviews" tal:condition="context/reviews">
+                  <div tal:define="
+                    publication area/publication;
+                    date area/date;
+                    pages area/pages;
+                    status area/status" tal:condition="python: status.startswith('rip')"><p>
+                    &quot;<span tal:replace="publication">publication</span>&quot; <span tal:replace="date">date</span>:
+                    <span tal:replace="pages">pages</span>. </p>
+                  </div>
+
+                </tal:areas>
+              </li>
+            </ol>
+          </li>
+          <li><h3>Professional Honors, Prizes, Fellowships</h3>
+            <tal:areas repeat="area context/professional" tal:condition="context/professional">
+              <p tal:define="
+                description area/description;
+                date area/dates;"><span tal:replace="description">title</span>: <span tal:replace="date">date</span>.
+              </p>
+            </tal:areas>
+          </li>
+          <li><h3>Grants-In-Aid</h3>
+            <tal:areas repeat="area context/grants" tal:condition="context/grants">
+              <p tal:define="
+                agency area/agency;
+                title area/title;
+                amount area/amount;
+                date area/dates;"><span tal:replace="agency">agency</span>, <span tal:replace="title">title</span>.
+                <span tal:replace="date">date</span>: <span tal:replace="amount">amount</span>. </p>
+            </tal:areas>
+          </li>
+          <li><h3>Institutional Service</h3>
+            <ol type="A">
+              <li>Service to the Department<br/>
+                <tal:areas repeat="area context/serviceDepartment" tal:condition="context/serviceDepartment">
+                  <p tal:define="
+                    description area/description;
+                    date area/dates;"><span tal:replace="description">title</span>: <span tal:replace="date">date</span>.
+                  </p>
+                </tal:areas>
+              </li>
+              <li>Service to the School<br/>
+                <tal:areas repeat="area context/serviceSchool" tal:condition="context/serviceSchool">
+                  <p tal:define="
+                    description area/description;
+                    date area/dates;"><span tal:replace="description">title</span>: <span tal:replace="date">date</span>.
+                  </p>
+                </tal:areas>
+              </li>
+              <li>Service to the College<br/>
+                <tal:areas repeat="area context/serviceCollege" tal:condition="context/serviceCollege">
+                  <p tal:define="
+                    description area/description;
+                    date area/dates;"><span tal:replace="description">title</span>: <span tal:replace="date">date</span>.
+                  </p>
+                </tal:areas>
+              </li>
+              <li>Service to the Graduate Center<br/>
+                <tal:areas repeat="area context/serviceGraduateCenter" tal:condition="context/serviceGraduateCenter">
+                  <p tal:define="
+                    description area/description;
+                    date area/dates;"><span tal:replace="description">title</span>: <span tal:replace="date">date</span>.
+                  </p>
+                </tal:areas>
+              </li>
+              <li>Service to the University<br/>
+                <tal:areas repeat="area context/serviceUniversity" tal:condition="context/serviceUniversity">
+                  <p tal:define="
+                    description area/description;
+                    date area/dates;"><span tal:replace="description">title</span>: <span tal:replace="date">date</span>.
+                  </p>
+                </tal:areas>
+              </li>
+            </ol>
+          </li>
+          <li><h3>Offices Held In Professional Societies</h3>
+            <tal:areas repeat="area context/officeHeld" tal:condition="context/officeHeld">
+              <p tal:define="
+                description area/description;
+                date area/dates;"><span tal:replace="description">description</span>:
+                <span tal:replace="date">date</span>. </p>
+            </tal:areas>
+          </li>
+          <li><h3>Other Professional Activities And Public Service</h3>
+            <tal:areas repeat="area context/activities" tal:condition="context/activities">
+              <p tal:define="
+                description area/description;
+                date area/dates;"><span tal:replace="description">description</span>:
+                <span tal:replace="date">date</span>. </p>
+            </tal:areas>
+          </li>
+          <li><h3>Teaching Activities At This Institution</h3>
+            <ol type="A">
+              <li>Courses Taught (List)<br/>
+                <table class="table" tal:condition="context/coursesTaught">
+                  <tr>
+                    <th scope="col">Course</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                  <tal:areas repeat="area context/coursesTaught">
+                    <tr  tal:define="
+                      description area/description;
+                      dept area/dept;
+                      number area/number;">
+                      <td><span tal:replace="dept">dept</span>&nbsp;<span tal:replace="number">number</span>&nbsp;</td>
+                      <td><span tal:replace="description">description</span>&nbsp;</td>
+                    </tr>
+                  </tal:areas>
+                </table>
+              </li>
+              <li>New courses/programs developed (list):<br/>
+                <tal:areas repeat="area context/developed" tal:condition="context/developed">
+                  <p tal:define="
+                    description area/description;
+                    title area/title;"><span tal:replace="title">title</span>, <span tal:replace="description">description</span>.
+                  </p>
+                </tal:areas>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+    </tal:main-macro>
+  </div>
+</div>
+</body>
+</html>

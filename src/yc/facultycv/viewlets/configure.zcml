@@ -1,0 +1,61 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="yc.facultycv">
+
+  -*- extra stuff goes here -*-
+
+  <browser:viewlet
+    name="department"
+    for="yc.facultycv.interfaces.IDepartmentVoteMarker"
+    manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+    layer="..interfaces.IDepartmentVoteLayer"
+    class=".department.Vote"
+    template="department.pt"
+    permission="yc.facultycv.view_department_vote"
+  />
+
+  <browser:viewlet
+    name="college"
+    for="yc.facultycv.interfaces.ICollegeVoteMarker"
+    manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+    layer="..interfaces.ICollegeVoteLayer"
+    class=".college.Vote"
+    template="college.pt"
+    permission="yc.facultycv.view_college_vote"
+  />
+
+
+  <browser:page
+    name="college_vote"
+    for="yc.facultycv.interfaces.ICollegeVoteMarker"
+    layer="..interfaces.ICollegeVoteLayer"
+    class=".college_vote.Vote"
+    permission="yc.facultycv.do_college_vote"
+  />
+
+  <browser:page
+    name="department_vote"
+    for="yc.facultycv.interfaces.IDepartmentVoteMarker"
+    layer="..interfaces.IDepartmentVoteLayer"
+    class=".department_vote.Vote"
+    permission="yc.facultycv.do_department_vote"
+  />
+
+  <browser:page
+    name="college_clearvotes"
+    for="yc.facultycv.interfaces.ICollegeVoteMarker"
+    layer="..interfaces.ICollegeVoteLayer"
+    class=".college_vote.ClearVotes"
+    permission="zope2.ViewManagementScreens"
+  />
+
+  <browser:page
+    name="department_clearvotes"
+    for="yc.facultycv.interfaces.IDepartmentVoteMarker"
+    layer="..interfaces.IDepartmentVoteLayer"
+    class=".department_vote.ClearVotes"
+    permission="zope2.ViewManagementScreens"
+  />
+
+</configure>

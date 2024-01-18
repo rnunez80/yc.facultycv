@@ -1,0 +1,57 @@
+<html>
+<body>
+<!-- JAVASCRIPT -->
+<metal:javascript define-macro="local_java">
+</metal:javascript>
+
+<!-- Local HEADER -->
+<div metal:define-macro="portlet2" tal:define="is_editable context/@@plone_context_state/is_editable;">
+
+  <div tal:condition="is_editable">
+    <a href="http://ycdirectory" class="btn btn-primary span12">Update Contact Info (Intranet Only)</a>
+  </div>
+  &nbsp;
+
+  <div tal:define="results python: context.getFolderContents()" tal:condition="results">
+
+    <table class="table table-striped">
+      <tr>
+        <th><span tal:content="context/getLast_name"> Title or id </span>'s P&amp;B Actions</th>
+      </tr>
+      <tr tal:repeat="obj results" >
+        <td>
+          <a
+            href="" tal:attributes="href obj/getURL" tal:content="obj/Title">[Title]</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div tal:condition="is_editable">
+    <a href="" class="btn btn-success span12"  tal:attributes="href string:${context/absolute_url}/pbactiontypeview" >Add
+      New P&amp;B Doc</a>
+  </div>
+  &nbsp;
+</div>
+
+<!-- Local PORTLETS -->
+<div metal:define-macro="portlet">
+  <h1><span tal:content="context/First_name"> Title or id </span>
+    <span tal:content="context/Last_name"> Title or id </span></h1>
+  <i><u tal:replace="context/OtherTitle">Other Title</u><br tal:condition="context/OtherTitle" />
+    <u tal:replace="context/TeachingTitle">Title</u><br tal:condition="context/TeachingTitle" />
+    <u tal:replace="context/Dept">Department</u></i>
+  <dl class="portlet">
+    <dt class="portletheader">
+      <a class="tile" href="${context/absolute_url}/enhanced-c-v">View Online Enhanced CV</a></dt>
+  </dl>
+
+  <dl class="portlet">
+    <dt class="portletheader"><a href="/faculty-staff/p-b-documents-repository">P & B Archives</a></dt>
+  </dl>
+
+
+</div>
+
+</body>
+</html>
