@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from plone import api
 from plone.autoform import directives
 from plone.dexterity.content import Item
 from plone.supermodel import model
@@ -108,7 +107,14 @@ class IPbactionscholar(model.Schema):
         required=False,
         defaultFactory=getDept,
     )
-
+    # new field
+    directives.mode(can_see_votes='hidden')
+    directives.read_permission(can_see_votes='yc.facultycv.ShowView')
+    can_see_votes = schema.TextLine(
+        title=_('Can See Votes'),
+        required=False,
+        default=u'True',
+    )
 
 @implementer(IPbactionscholar)
 class Pbactionscholar(Item):

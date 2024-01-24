@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from plone import api
 from plone.autoform import directives
 from plone.dexterity.content import Item
 from plone.namedfile.field import NamedBlobFile
@@ -10,8 +9,8 @@ from z3c.form.browser.radio import RadioFieldWidget
 from z3c.form.interfaces import IAddForm
 from z3c.form.interfaces import IEditForm
 from zope import schema
-from zope.interface import implementer
 from zope.interface import Invalid
+from zope.interface import implementer
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
 from zope.schema.vocabulary import SimpleTerm
@@ -525,7 +524,14 @@ class IPbactionclt(model.Schema):
         title=_('Expiration Date'),
         required=False,
     )
-
+    # new field
+    directives.mode(can_see_votes='hidden')
+    directives.read_permission(can_see_votes='yc.facultycv.ShowView')
+    can_see_votes = schema.TextLine(
+        title=_('Can See Votes'),
+        required=False,
+        default=u'True',
+    )
 
 @implementer(IPbactionclt)
 class Pbactionclt(Item):
