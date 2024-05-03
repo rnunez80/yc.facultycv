@@ -12,8 +12,8 @@ from plone.supermodel.directives import fieldset
 from yc.facultycv import _
 from z3c.form.browser.checkbox import SingleCheckBoxFieldWidget
 from zope import schema
-from zope.interface import implementer
 from zope.interface import Interface
+from zope.interface import implementer
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
@@ -35,6 +35,7 @@ getDegreeVocabulary = SimpleVocabulary([
     SimpleTerm(value='certificate', title=_('certificate')),
     SimpleTerm(value='DBA', title=_('DBA')),
     SimpleTerm(value='DC', title=_('DC')),
+    SimpleTerm(value='DMA', title=_('DMA')),
     SimpleTerm(value='DNS', title=_('DNS')),
     SimpleTerm(value='DPhil', title=_('DPhil')),
     SimpleTerm(value='DSW', title=_('DSW')),
