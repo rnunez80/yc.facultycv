@@ -459,7 +459,7 @@ class IPbactionportfolioa(model.Schema):
         description=_(u"""A research statement framing the publication would be advisable, but is not mandatory."""),
         required=False,
     )
-
+    directives.mode(ExternalPeerReviewOfScholarship1='hidden')
     directives.write_permission(
         ExternalPeerReviewOfScholarship1='yc.facultycv.EditPBMemo')
     directives.read_permission(
@@ -475,7 +475,7 @@ class IPbactionportfolioa(model.Schema):
         and the evaluation invitation will be issued by an Academic Dean. All three external evaluations will be
         submitted by the Department Chair and become part of the candidate's online Portfolio."""),
     )
-
+    directives.mode(ExternalPeerReviewOfScholarship2='hidden')
     directives.write_permission(
         ExternalPeerReviewOfScholarship2='yc.facultycv.EditPBMemo')
     directives.read_permission(
@@ -485,7 +485,7 @@ class IPbactionportfolioa(model.Schema):
         title=_(u"External Peer Review Of Scholarship 2"),
         required=False,
     )
-
+    directives.mode(ExternalPeerReviewOfScholarship3='hidden')
     directives.write_permission(
         ExternalPeerReviewOfScholarship3='yc.facultycv.EditPBMemo')
     directives.read_permission(
