@@ -1,0 +1,2109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dc-workflow workflow_id="p-b-action-application-process-2024" title="P and B Application Process 2024"
+             description="use for the Personnel and Budget process" state_variable="review_state" initial_state="draft"
+             manager_bypass="True">
+  <permission>Access contents information</permission>
+  <permission>CMFEditions: Save new version</permission>
+  <permission>Delete objects</permission>
+  <permission>List folder contents</permission>
+  <permission>Modify portal content</permission>
+  <permission>View</permission>
+  <permission>View History</permission>
+  <permission>yc.facultycv: Add Faculty</permission>
+  <permission>yc.facultycv: Add Pbaction</permission>
+  <permission>yc.facultycv: Add Pbactionclt</permission>
+  <permission>yc.facultycv: Add Pbactionleave</permission>
+  <permission>yc.facultycv: Add Pbactionportfolioa</permission>
+  <permission>yc.facultycv: Add Pbactionportfoliob</permission>
+  <permission>yc.facultycv: Add Pbactionportfolioc</permission>
+  <permission>yc.facultycv: Add Pbactionscholar</permission>
+  <permission>yc.facultycv: Add Staff</permission>
+  <permission>yc.facultycv: Add Symposium Talk</permission>
+  <permission>yc.facultycv: Can Clear Votes</permission>
+  <permission>yc.facultycv: Do College Vote</permission>
+  <permission>yc.facultycv: Do Department Vote</permission>
+  <permission>yc.facultycv: Edit Appeal</permission>
+  <permission>yc.facultycv: Preview File</permission>
+  <permission>yc.facultycv: Show View</permission>
+  <permission>yc.facultycv: View Appeal</permission>
+  <permission>yc.facultycv: View College Vote</permission>
+  <permission>yc.facultycv: View Department Vote</permission>
+  <permission>yc.facultycv: edit PB College Chair</permission>
+  <permission>yc.facultycv: edit PB dept Chair</permission>
+  <permission>yc.facultycv: edit PB memo</permission>
+  <permission>yc.facultycv: view PB college committees</permission>
+  <permission>yc.facultycv: view PB dept committees</permission>
+  <state state_id="collegeReviewing" title="College Reviewing">
+    <exit-transition transition_id="closeDeptVoting"/>
+    <exit-transition transition_id="retractToDept"/>
+    <exit-transition transition_id="satisfactory"/>
+    <exit-transition transition_id="sendToCollegeVoting"/>
+    <exit-transition transition_id="unsatisfactory"/>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="CMFEditions: Save new version" acquired="False">
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Faculty" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbaction" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionclt" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionleave" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioa" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfoliob" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioc" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionscholar" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Staff" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Symposium Talk" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Can Clear Votes" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do College Vote" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do Department Vote" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Edit Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Preview File" acquired="False">
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Show View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View College Vote" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Department Vote" acquired="False">
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB College Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB dept Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB memo" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB college committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB dept committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="collegeReviewingAppeal" title="College Reviewing Appeal">
+    <exit-transition transition_id="satisfactory"/>
+    <exit-transition transition_id="sendToCollegeVoting"/>
+    <exit-transition transition_id="unsatisfactory"/>
+    <exit-transition transition_id="unsatisfactoryByDept"/>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="CMFEditions: Save new version" acquired="True">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Faculty" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbaction" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionclt" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionleave" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioa" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfoliob" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioc" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionscholar" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Staff" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Symposium Talk" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Can Clear Votes" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Edit Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Preview File" acquired="False">
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Show View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB College Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB dept Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB memo" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB college committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB dept committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="collegeVoting" title="College Voting">
+    <exit-transition transition_id="closeCollegeVoting"/>
+    <exit-transition transition_id="satisfactory"/>
+    <exit-transition transition_id="sendToCollege"/>
+    <exit-transition transition_id="unsatisfactory"/>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="CMFEditions: Save new version" acquired="False">
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Faculty" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbaction" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionclt" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionleave" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioa" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfoliob" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioc" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionscholar" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Staff" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Symposium Talk" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Can Clear Votes" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Edit Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Preview File" acquired="False">
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Show View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB College Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB dept Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB memo" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB college committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB dept committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="collegeVotingClosed" title="College Voting Closed">
+    <exit-transition transition_id="satisfactory"/>
+    <exit-transition transition_id="sendToCollege"/>
+    <exit-transition transition_id="sendToCollegeVoting"/>
+    <exit-transition transition_id="unsatisfactory"/>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="CMFEditions: Save new version" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Faculty" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbaction" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionclt" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionleave" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioa" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfoliob" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioc" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionscholar" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Staff" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Symposium Talk" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Can Clear Votes" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Edit Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Preview File" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Show View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB College Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB dept Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB memo" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB college committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBcollege</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB dept committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="deptRejected" title="Unsatisfactory by Dept">
+    <description>Reappointment/Promotion Unsatisfactory by Dept, Member can submit appeal directly to the College-wide P&amp;B.</description>
+    <exit-transition transition_id="retractToChair"/>
+    <exit-transition transition_id="submitAppeal"/>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="CMFEditions: Save new version" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Faculty" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbaction" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionclt" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionleave" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioa" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfoliob" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioc" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionscholar" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Staff" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Symposium Talk" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Can Clear Votes" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Edit Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Preview File" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Show View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB College Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB dept Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB memo" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB college committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB dept committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="deptReviewing" title="Department Reviewing">
+    <exit-transition transition_id="retractToChair"/>
+    <exit-transition transition_id="sendToCollege"/>
+    <exit-transition transition_id="sendToDeptVoting"/>
+    <exit-transition transition_id="sendToDraft"/>
+    <exit-transition transition_id="unsatisfactoryByDept"/>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="CMFEditions: Save new version" acquired="False">
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Faculty" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbaction" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionclt" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionleave" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioa" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfoliob" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioc" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionscholar" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Staff" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Symposium Talk" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Can Clear Votes" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do College Vote" acquired="False">
+    </permission-map>
+    <permission-map name="yc.facultycv: Do Department Vote" acquired="False">
+    </permission-map>
+    <permission-map name="yc.facultycv: Edit Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Preview File" acquired="False">
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Show View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View College Vote" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Department Vote" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB College Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB dept Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB memo" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB college committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB dept committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="deptVoting" title="Department Voting">
+    <exit-transition transition_id="closeDeptVoting"/>
+    <exit-transition transition_id="retractToChair"/>
+    <exit-transition transition_id="sendToCollege"/>
+    <exit-transition transition_id="sendToDept"/>
+    <exit-transition transition_id="sendToDraft"/>
+    <exit-transition transition_id="unsatisfactoryByDept"/>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="CMFEditions: Save new version" acquired="False">
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Faculty" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbaction" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionclt" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionleave" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioa" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfoliob" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioc" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionscholar" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Staff" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Symposium Talk" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Can Clear Votes" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Edit Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Preview File" acquired="False">
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Show View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB College Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB dept Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB memo" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB college committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB dept committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="deptVotingClosed" title="Department Voting Closed">
+    <exit-transition transition_id="sendToCollege"/>
+    <exit-transition transition_id="sendToDept"/>
+    <exit-transition transition_id="sendToDeptVoting"/>
+    <exit-transition transition_id="unsatisfactoryByDept"/>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="CMFEditions: Save new version" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Faculty" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbaction" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionclt" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionleave" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioa" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfoliob" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioc" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionscholar" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Staff" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Symposium Talk" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Can Clear Votes" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Edit Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Preview File" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Show View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB College Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB dept Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB memo" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB college committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB dept committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdept</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="draft" title="Working Draft">
+    <description>Faculty MUST submit to chair when done editing</description>
+    <exit-transition transition_id="sendToChair"/>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="CMFEditions: Save new version" acquired="False">
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Faculty" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbaction" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionclt" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionleave" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioa" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfoliob" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioc" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionscholar" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Staff" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Symposium Talk" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Can Clear Votes" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Edit Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Preview File" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Show View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB College Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB dept Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB memo" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB college committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB dept committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="pendingChair" title="Pending Chair Review">
+    <exit-transition transition_id="sendToCollege"/>
+    <exit-transition transition_id="sendToDept"/>
+    <exit-transition transition_id="sendToDraft"/>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="CMFEditions: Save new version" acquired="False">
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Faculty" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbaction" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionclt" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionleave" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioa" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfoliob" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioc" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionscholar" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Staff" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Symposium Talk" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Can Clear Votes" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Edit Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Preview File" acquired="False">
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Show View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB College Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB dept Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB memo" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB college committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB dept committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="satisfactory" title="Satisfactory ">
+    <exit-transition transition_id="unsatisfactory"/>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="CMFEditions: Save new version" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Faculty" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbaction" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionclt" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionleave" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioa" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfoliob" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioc" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionscholar" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Staff" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Symposium Talk" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Can Clear Votes" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Edit Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Preview File" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Show View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB College Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB dept Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB memo" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB college committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB dept committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="unsatisfactory" title="Unsatisfactory">
+    <exit-transition transition_id="closeCollegeVoting"/>
+    <exit-transition transition_id="satisfactory"/>
+    <exit-transition transition_id="unsatisfactoryByDept"/>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="CMFEditions: Save new version" acquired="False">
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Faculty" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbaction" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionclt" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionleave" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioa" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfoliob" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionportfolioc" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Pbactionscholar" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Staff" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Add Symposium Talk" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Can Clear Votes" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Do Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Edit Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Preview File" acquired="False">
+      <permission-role>PBhead</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: Show View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Appeal" acquired="False">
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View College Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: View Department Vote" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB College Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB dept Chair" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: edit PB memo" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB college committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="yc.facultycv: view PB dept committees" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>PBdeptChair</permission-role>
+      <permission-role>PBhead</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+  <transition transition_id="closeCollegeVoting" title="Close College Voting" new_state="collegeVotingClosed"
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Close College Voting</action>
+    <guard>
+      <guard-role>PBhead</guard-role>
+    </guard>
+  </transition>
+  <transition transition_id="closeDeptVoting" title="Close Department Voting" new_state="deptVotingClosed"
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Close Department Voting</action>
+    <guard>
+      <guard-role>PBdeptChair</guard-role>
+    </guard>
+  </transition>
+  <transition transition_id="retractToChair" title="Retract to Chair" new_state="pendingChair" trigger="USER"
+              before_script="" after_script="">
+    <description>send document back to chair</description>
+    <action url="" category="workflow" icon="">Retract to Chair</action>
+    <guard>
+      <guard-role>PBdeptChair</guard-role>
+    </guard>
+  </transition>
+  <transition transition_id="retractToDept" title="Return to Department Reviewing" new_state="deptReviewing"
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Return to Department Reviewing</action>
+    <guard>
+      <guard-permission>Manage Portal</guard-permission>
+    </guard>
+  </transition>
+  <transition transition_id="satisfactory" title="Satisfactory " new_state="satisfactory" trigger="USER"
+              before_script="" after_script="">
+    <action url="" category="workflow" icon="">Satisfactory</action>
+    <guard>
+      <guard-role>PBhead</guard-role>
+    </guard>
+  </transition>
+  <transition transition_id="sendToChair" title="Submit to Department Chair" new_state="pendingChair" trigger="USER"
+              before_script="" after_script="">
+    <action url="" category="workflow" icon="">Submit to Department Chair</action>
+    <guard>
+      <guard-permission>Modify portal content</guard-permission>
+    </guard>
+  </transition>
+  <transition transition_id="sendToCollege" title="Send to College Committee" new_state="collegeReviewing"
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Send to College Committee</action>
+    <guard>
+      <guard-role>PBdeptChair</guard-role>
+    </guard>
+  </transition>
+  <transition transition_id="sendToCollegeVoting" title="Open College Voting" new_state="collegeVoting" trigger="USER"
+              before_script="" after_script="">
+    <action url="" category="workflow" icon="">Open College Voting</action>
+    <guard>
+      <guard-role>PBhead</guard-role>
+    </guard>
+  </transition>
+  <transition transition_id="sendToDept" title="Send to Department Committee" new_state="deptReviewing" trigger="USER"
+              before_script="" after_script="">
+    <action url="" category="workflow" icon="">Send to Department Committee</action>
+    <guard>
+      <guard-role>PBdeptChair</guard-role>
+    </guard>
+  </transition>
+  <transition transition_id="sendToDeptVoting" title="Open Department Voting" new_state="deptVoting" trigger="USER"
+              before_script="" after_script="">
+    <action url="" category="workflow" icon="">Open Department Voting</action>
+    <guard>
+      <guard-role>PBdeptChair</guard-role>
+    </guard>
+  </transition>
+  <transition transition_id="sendToDraft" title="Return to Faculty" new_state="draft" trigger="USER" before_script=""
+              after_script="">
+    <description>Send the Document Back to Draft State</description>
+    <action url="" category="workflow" icon="">Return to Faculty</action>
+    <guard>
+      <guard-role>PBdeptChair</guard-role>
+    </guard>
+  </transition>
+  <transition transition_id="submitAppeal" title="Submit Appeal to College Committee" new_state="collegeReviewingAppeal"
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Submit Appeal to College Committee</action>
+    <guard>
+      <guard-permission>Modify portal content</guard-permission>
+    </guard>
+  </transition>
+  <transition transition_id="unsatisfactory" title="Unsatisfactory" new_state="unsatisfactory" trigger="USER"
+              before_script="" after_script="">
+    <action url="" category="workflow" icon="">Unsatisfactory</action>
+    <guard>
+      <guard-role>PBhead</guard-role>
+    </guard>
+  </transition>
+  <transition transition_id="unsatisfactoryByDept" title="Unsatisfactory by Department" new_state="deptRejected"
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Unsatisfactory by Department</action>
+    <guard>
+      <guard-role>PBdeptChair</guard-role>
+    </guard>
+  </transition>
+  <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
+    <description>Previous transition</description>
+    <default>
+
+      <expression>transition/getId|nothing</expression>
+    </default>
+    <guard>
+    </guard>
+  </variable>
+  <variable variable_id="actor" for_catalog="False" for_status="True" update_always="True">
+    <description>The ID of the user who performed the last transition</description>
+    <default>
+
+      <expression>user/getUserName</expression>
+    </default>
+    <guard>
+    </guard>
+  </variable>
+  <variable variable_id="comments" for_catalog="False" for_status="True" update_always="True">
+    <description>Comment about the last transition</description>
+    <default>
+
+      <expression>python:state_change.kwargs.get('comment', '')</expression>
+    </default>
+    <guard>
+    </guard>
+  </variable>
+  <variable variable_id="review_history" for_catalog="False" for_status="False" update_always="False">
+    <description>Provides access to workflow history</description>
+    <default>
+
+      <expression>state_change/getHistory</expression>
+    </default>
+    <guard>
+      <guard-permission>Request review</guard-permission>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </variable>
+  <variable variable_id="time" for_catalog="False" for_status="True" update_always="True">
+    <description>When the previous transition was performed</description>
+    <default>
+
+      <expression>state_change/getDateTime</expression>
+    </default>
+    <guard>
+    </guard>
+  </variable>
+</dc-workflow>
