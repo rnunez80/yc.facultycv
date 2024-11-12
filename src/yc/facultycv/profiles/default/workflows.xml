@@ -4,75 +4,109 @@
     name="title">Contains workflow definitions for FacultyCV</property>
  <object name="employee" meta_type="Workflow"/>
  <object name="p-b-action-application-process-2022" meta_type="Workflow"/>
+  <object name="p-b-action-application-process-2024" meta_type="Workflow"/>
  <bindings>
+   <type type_id="Faculty">
+     <bound-workflow workflow_id="employee"/>
+   </type>
+   <type type_id="Staff">
+     <bound-workflow workflow_id="employee"/>
+   </type>
   <type type_id="faculty2">
    <bound-workflow workflow_id="employee"/>
   </type>
+   <type type_id="pb">
+     <bound-workflow workflow_id="p-b-action-application"/>
+   </type>
   <type type_id="pb-clt">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pb-leave-request">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pb-promotion-full">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pb-promotion-to-associate">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pb-reappointment-1">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pb-reappointment-2">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pb-reappointment-3">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pb-reappointment-4">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pb-reappointment-5">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pb-reappointment-5-lecturer">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pb-reappointment-6">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pb-reappointment-7">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pb-scholar-incentive-award">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
+  </type>
+   <type type_id="pbAction">
+     <bound-workflow workflow_id="p-b-action-application-process-2019"/>
+   </type>
+   <type type_id="pbActionCLT">
+     <bound-workflow workflow_id="p-b-action-application-process-2015"/>
+   </type>
+   <type type_id="pbActionLeave">
+     <bound-workflow workflow_id="p-b-action-application-process-2015"/>
+   </type>
+   <type type_id="pbActionPortfolio">
+     <bound-workflow workflow_id="p-b-action-application-process-2015"/>
+   </type>
+   <type type_id="pbActionPortfolio0">
+     <bound-workflow workflow_id="p-b-action-application-process-2015"/>
+   </type>
+   <type type_id="pbActionPortfolio1">
+     <bound-workflow workflow_id="p-b-action-application-process-2015"/>
+   </type>
+   <type type_id="pbActionPortfolio2">
+     <bound-workflow workflow_id="p-b-action-application-process-2015"/>
+   </type>
+   <type type_id="pbActionScholar">
+     <bound-workflow workflow_id="p-b-action-application"/>
   </type>
   <type type_id="pbaction2">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pbactionclt2">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pbactionleave2">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pbactionportfolioa">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pbactionportfoliob">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pbactionportfolioc">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="pbactionscholar2">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
   <type type_id="staff2">
    <bound-workflow workflow_id="employee"/>
   </type>
   <type type_id="symposium_talk">
-   <bound-workflow workflow_id="p-b-action-application-process-2022"/>
+    <bound-workflow workflow_id="p-b-action-application-process-2024"/>
   </type>
  </bindings>
 </object>
