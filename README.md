@@ -14,6 +14,7 @@ Features
 - Uses similar workflows as the FacultyCV original with the difference being they have been updated to work in this newer addon.
 
 - ![P-and-B-Workflow-Chart.png](P-and-B-Workflow-Chart.png)
+- ![faculty-cv-workflow.jpg](faculty-cv-workflow.jpg)
 
 - The above chart still applies in this current addon.
 
