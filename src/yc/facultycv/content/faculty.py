@@ -12,8 +12,8 @@ from plone.supermodel.directives import fieldset
 from yc.facultycv import _
 from z3c.form.browser.checkbox import SingleCheckBoxFieldWidget
 from zope import schema
-from zope.interface import Interface
 from zope.interface import implementer
+from zope.interface import Interface
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
@@ -119,7 +119,7 @@ class IBooks(Interface):
     #     vocabulary=getStatusVocabulary,
     #     required=False
     # )
-    status = schema.TextLine(title=_('Status'), default=u'', required=False)
+    status = schema.TextLine(title=_('Status'), required=False)
     authors = schema.TextLine(title=_('Authors'), required=False, default=u'')
     title = schema.TextLine(title=_('Title'), required=False, default=u'')
     place = schema.TextLine(title=_('Place'), required=False, default=u'')
@@ -136,7 +136,7 @@ class IArticles(Interface):
     #     vocabulary=getStatusVocabulary,
     #     required=False
     # )
-    status = schema.TextLine(title=_('Status'), default=u'', required=False)
+    status = schema.TextLine(title=_('Status'), required=False)
     authors = schema.TextLine(title=_('Authors'), required=False, default=u'')
     journalTitle = schema.TextLine(title=_('Journal Title'), required=False, default=u'')
     title = schema.TextLine(title=_('Title'), required=False, default=u'')
@@ -148,12 +148,12 @@ class IArticles(Interface):
 
 
 class IRefereedProceedings(Interface):
-#     status = schema.Choice(
-#         title=_('Status'),
-#         vocabulary=getStatusVocabulary,
-#         required=False
-#     )
-    status = schema.TextLine(title=_('Status'), default=u'', required=False)
+    # status = schema.Choice(
+    #     title=_('Status'),
+    #     vocabulary=getStatusVocabulary,
+    #     required=False
+    # )
+    status = schema.TextLine(title=_('Status'), required=False)
     authors = schema.TextLine(title=_('Authors'), required=False, default=u'')
     title = schema.TextLine(title=_('Title'), required=False, default=u'')
     journalTitle = schema.TextLine(title=_('Journal Title'), required=False, default=u'')
@@ -170,7 +170,7 @@ class INonRefereedProceedings(Interface):
 #         vocabulary=getStatusVocabulary,
 #         required=False
 #     )
-    status = schema.TextLine(title=_('Status'), default=u'', required=False)
+    status = schema.TextLine(title=_('Status'), required=False)
     authors = schema.TextLine(title=_('Authors'), required=False, default=u'')
     title = schema.TextLine(title=_('Title'), required=False, default=u'')
     journalTitle = schema.TextLine(title=_('Journal Title'), required=False, default=u'')
@@ -187,7 +187,7 @@ class IChapters(Interface):
 #         vocabulary=getStatusVocabulary,
 #         required=False
 #     )
-    status = schema.TextLine(title=_('Status'), default=u'', required=False)
+    status = schema.TextLine(title=_('Status'), required=False)
     authors = schema.TextLine(title=_('Authors'), required=False, default=u'')
     title = schema.TextLine(title=_('Title'), required=False, default=u'')
     journalTitle = schema.TextLine(title=_('Journal Title'), required=False, default=u'')
@@ -204,7 +204,7 @@ class IMonographs(Interface):
 #         vocabulary=getStatusVocabulary,
 #         required=False
 #     )
-    status = schema.TextLine(title=_('Status'), default=u'', required=False)
+    status = schema.TextLine(title=_('Status'), required=False)
     authors = schema.TextLine(title=_('Authors'), required=False, default=u'')
     title = schema.TextLine(title=_('Title'), required=False, default=u'')
     journalTitle = schema.TextLine(title=_('Journal Title'), required=False, default=u'')
@@ -221,7 +221,7 @@ class IReviews(Interface):
 #         vocabulary=getStatusVocabulary,
 #         required=False
 #     )
-    status = schema.TextLine(title=_('Status'), default=u'', required=False)
+    status = schema.TextLine(title=_('Status'), required=False)
     publication = schema.TextLine(title=_('Publication'), required=False, default=u'')
     title = schema.TextLine(title=_('Book Title'), required=False, default=u'')
     place = schema.TextLine(title=_('Place'), required=False, default=u'')
