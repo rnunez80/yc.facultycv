@@ -219,7 +219,7 @@ class IReviews(Interface):
     status = schema.Choice(
         title=_('Status'),
         vocabulary=getStatusVocabulary,
-        required=False
+        required=True
     )
     # status = schema.TextLine(title=_('Status'), required=False)
     publication = schema.TextLine(title=_('Publication'), required=False, default=u'')
