@@ -12,7 +12,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='yc.facultycv',
-    version='1.7.2',
+    version='1.7.3',
     description="An add-on to help YC Faculty enter and submit their CV's.",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/

@@ -77,12 +77,12 @@ getStatusVocabulary = SimpleVocabulary([
 
 
 class IEducationRow(Interface):
-    # degree = schema.Choice(
-    #     title=_('Degree'),
-    #     required=False,
-    #     vocabulary=getDegreeVocabulary
-    # )
-    degree = schema.TextLine(title=_('Degree'), required=False)
+    degree = schema.Choice(
+        title=_('Degree'),
+        required=False,
+        vocabulary=getDegreeVocabulary
+    )
+    # degree = schema.TextLine(title=_('Degree'), required=False)
     institution = schema.TextLine(title=_('Institution'), required=False)
     area = schema.TextLine(title=_('Field'), required=False)
     year = schema.TextLine(title=_('Year'), required=False)
@@ -114,12 +114,12 @@ class IEmploymentRecord(Interface):
 
 
 class IBooks(Interface):
-    # status = schema.Choice(
-    #     title=_('Status'),
-    #     vocabulary=getStatusVocabulary,
-    #     required=False
-    # )
-    status = schema.TextLine(title=_('Status'), required=False)
+    status = schema.Choice(
+        title=_('Status'),
+        vocabulary=getStatusVocabulary,
+        required=False
+    )
+    # status = schema.TextLine(title=_('Status'), required=False)
     authors = schema.TextLine(title=_('Authors'), required=False, default=u'')
     title = schema.TextLine(title=_('Title'), required=False, default=u'')
     place = schema.TextLine(title=_('Place'), required=False, default=u'')
@@ -131,12 +131,12 @@ class IBooks(Interface):
 
 
 class IArticles(Interface):
-    # status = schema.Choice(
-    #     title=_('Status'),
-    #     vocabulary=getStatusVocabulary,
-    #     required=False
-    # )
-    status = schema.TextLine(title=_('Status'), required=False)
+    status = schema.Choice(
+        title=_('Status'),
+        vocabulary=getStatusVocabulary,
+        required=False
+    )
+    # status = schema.TextLine(title=_('Status'), required=False)
     authors = schema.TextLine(title=_('Authors'), required=False, default=u'')
     journalTitle = schema.TextLine(title=_('Journal Title'), required=False, default=u'')
     title = schema.TextLine(title=_('Title'), required=False, default=u'')
@@ -148,12 +148,12 @@ class IArticles(Interface):
 
 
 class IRefereedProceedings(Interface):
-    # status = schema.Choice(
-    #     title=_('Status'),
-    #     vocabulary=getStatusVocabulary,
-    #     required=False
-    # )
-    status = schema.TextLine(title=_('Status'), required=False)
+    status = schema.Choice(
+        title=_('Status'),
+        vocabulary=getStatusVocabulary,
+        required=False
+    )
+    # status = schema.TextLine(title=_('Status'), required=False)
     authors = schema.TextLine(title=_('Authors'), required=False, default=u'')
     title = schema.TextLine(title=_('Title'), required=False, default=u'')
     journalTitle = schema.TextLine(title=_('Journal Title'), required=False, default=u'')
@@ -165,12 +165,12 @@ class IRefereedProceedings(Interface):
 
 
 class INonRefereedProceedings(Interface):
-#     status = schema.Choice(
-#         title=_('Status'),
-#         vocabulary=getStatusVocabulary,
-#         required=False
-#     )
-    status = schema.TextLine(title=_('Status'), required=False)
+    status = schema.Choice(
+        title=_('Status'),
+        vocabulary=getStatusVocabulary,
+        required=False
+    )
+    # status = schema.TextLine(title=_('Status'), required=False)
     authors = schema.TextLine(title=_('Authors'), required=False, default=u'')
     title = schema.TextLine(title=_('Title'), required=False, default=u'')
     journalTitle = schema.TextLine(title=_('Journal Title'), required=False, default=u'')
@@ -182,12 +182,12 @@ class INonRefereedProceedings(Interface):
 
 
 class IChapters(Interface):
-#     status = schema.Choice(
-#         title=_('Status'),
-#         vocabulary=getStatusVocabulary,
-#         required=False
-#     )
-    status = schema.TextLine(title=_('Status'), required=False)
+    status = schema.Choice(
+        title=_('Status'),
+        vocabulary=getStatusVocabulary,
+        required=False
+    )
+    # status = schema.TextLine(title=_('Status'), required=False)
     authors = schema.TextLine(title=_('Authors'), required=False, default=u'')
     title = schema.TextLine(title=_('Title'), required=False, default=u'')
     journalTitle = schema.TextLine(title=_('Journal Title'), required=False, default=u'')
@@ -199,12 +199,12 @@ class IChapters(Interface):
 
 
 class IMonographs(Interface):
-#     status = schema.Choice(
-#         title=_('Status'),
-#         vocabulary=getStatusVocabulary,
-#         required=False
-#     )
-    status = schema.TextLine(title=_('Status'), required=False)
+    status = schema.Choice(
+        title=_('Status'),
+        vocabulary=getStatusVocabulary,
+        required=False
+    )
+    # status = schema.TextLine(title=_('Status'), required=False)
     authors = schema.TextLine(title=_('Authors'), required=False, default=u'')
     title = schema.TextLine(title=_('Title'), required=False, default=u'')
     journalTitle = schema.TextLine(title=_('Journal Title'), required=False, default=u'')
@@ -216,12 +216,12 @@ class IMonographs(Interface):
 
 
 class IReviews(Interface):
-#     status = schema.Choice(
-#         title=_('Status'),
-#         vocabulary=getStatusVocabulary,
-#         required=False
-#     )
-    status = schema.TextLine(title=_('Status'), required=False)
+    status = schema.Choice(
+        title=_('Status'),
+        vocabulary=getStatusVocabulary,
+        required=False
+    )
+    # status = schema.TextLine(title=_('Status'), required=False)
     publication = schema.TextLine(title=_('Publication'), required=False, default=u'')
     title = schema.TextLine(title=_('Book Title'), required=False, default=u'')
     place = schema.TextLine(title=_('Place'), required=False, default=u'')
