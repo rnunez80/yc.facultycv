@@ -77,15 +77,15 @@ getStatusVocabulary = SimpleVocabulary([
 
 
 class IEducationRow(Interface):
-    degree = schema.Choice(
-        title=_('Degree'),
-        required=False,
-        vocabulary=getDegreeVocabulary
-    )
-    # degree = schema.TextLine(title=_('Degree'), required=False)
-    institution = schema.TextLine(title=_('Institution'), required=False)
-    area = schema.TextLine(title=_('Field'), required=False)
-    year = schema.TextLine(title=_('Year'), required=False)
+    # degree = schema.Choice(
+    #     title=_('Degree'),
+    #     required=False,
+    #     vocabulary=getDegreeVocabulary
+    # )
+    degree = schema.TextLine(title=_('Degree'), required=False, default=u'')
+    institution = schema.TextLine(title=_('Institution'), required=False, default=u'')
+    area = schema.TextLine(title=_('Field'), required=False, default=u'')
+    year = schema.TextLine(title=_('Year'), required=False, default=u'')
 
 
 class IExperienceFT(Interface):
