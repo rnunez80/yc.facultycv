@@ -812,7 +812,6 @@ class IFaculty(model.Schema):
 
     directives.read_permission(subjects='zope2.View')
     directives.write_permission(subjects='cmf.ModifyPortalContent')
-    directives.omitted("subjects")
     directives.no_omit("subjects")
     subjects = schema.Tuple(
         title=_("label_tags", default="Tags"),
