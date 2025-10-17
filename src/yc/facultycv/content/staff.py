@@ -2,7 +2,6 @@
 # from Products.CMFCore.utils import getToolByName
 from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.row import DictRow
-from plone import api
 from plone.app.z3cform.widgets.select import AjaxSelectFieldWidget
 from plone.autoform import directives
 from plone.dexterity.content import Container
@@ -13,6 +12,13 @@ from zope import schema
 from zope.interface import implementer
 from zope.interface import Interface
 from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
+from z3c.form.interfaces import IAddForm
+from z3c.form.interfaces import IEditForm
+from zope.schema.fieldproperty import FieldProperty
+from AccessControl import getSecurityManager
+from plone import api
+from zExceptions import Unauthorized
+from zope.security import checkPermission
 
 class IOfficeHoursRow(Interface):
     day = schema.TextLine(title=_('Day'), required=False)
@@ -149,8 +155,10 @@ class IStaff(model.Schema):
             '(including html tags) will be REJECTED'),
     )
 
-    directives.read_permission(subjects='yc.facultycv.AddStaff')
-    directives.write_permission(subjects='yc.facultycv.AddStaff')
+    directives.read_permission(subjects='zope2.View')
+    directives.write_permission(subjects='cmf.ModifyPortalContent')
+    directives.omitted("subjects")
+    directives.no_omit("subjects")
     subjects = schema.Tuple(
         title=_("label_tags", default="Tags"),
         description=_(
@@ -472,3 +480,32 @@ class Staff(Container):
     @username.setter
     def username(self, value):
         pass
+
+    # backing attribute
+    _subjects = ()
+
+    @property
+    def subjects(self):
+        return getattr(self, "_subjects", ())
+
+    @subjects.setter
+    def subjects(self, value):
+        # Permission check
+        member = api.user.get_current()
+        roles = api.user.get_roles(username=member.getUserName())
+        if "Site Administrator" not in roles:
+            raise Unauthorized("Only Site Administrators can modify the 'Tags' field.")
+
+        # Normalize value to tuple
+        if value is None:
+            value = ()
+        elif isinstance(value, list):
+            value = tuple(value)
+        elif not isinstance(value, tuple):
+            value = (value,)
+
+        # Set backing attribute
+        self._subjects = value
+
+        # Reindex the Subject index so the Contents/Folder view updates immediately
+        self.reindexObject(idxs=["Subject"])
