@@ -3,6 +3,7 @@
 from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.row import DictRow
 from plone import api
+from plone.app.z3cform.widgets.select import AjaxSelectFieldWidget
 from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.autoform import directives
 from plone.dexterity.content import Container
@@ -700,7 +701,7 @@ class IFaculty(model.Schema):
     fieldset('Other Information',
              fields=['professional', 'grants', 'serviceDepartment', 'serviceSchool', 'serviceCollege',
                      'serviceGraduateCenter', 'serviceUniversity', 'officeHeld', 'activities', 'coursesTaught',
-                     'developed', 'hidecv', 'scholarEnhance', 'teachEnhance']
+                     'developed', 'hidecv', 'scholarEnhance', 'teachEnhance', 'subjects']
              )
     directives.widget(professional=DataGridFieldFactory)
     professional = schema.List(
@@ -802,6 +803,22 @@ class IFaculty(model.Schema):
         title=_('Teaching Enhancements'),
         description=_('Comments on teaching'),
         required=False,
+    )
+
+    directives.read_permission(subjects='yc.facultycv.AddFaculty')
+    directives.write_permission(subjects='yc.facultycv.AddFaculty')
+    subjects = schema.Tuple(
+        title=_("label_tags", default="Tags"),
+        description=_(
+            "help_tags",
+            default="Tags are commonly used for ad-hoc organization of " + "content.",
+        ),
+        value_type=schema.TextLine(),
+        required=False,
+        missing_value=(),
+    )
+    directives.widget(
+        "subjects", AjaxSelectFieldWidget, vocabulary="plone.app.vocabularies.Keywords"
     )
 
     # directives.read_permission(subject='cmf.ModifyPortalContent')

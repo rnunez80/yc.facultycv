@@ -3,6 +3,7 @@
 from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.row import DictRow
 from plone import api
+from plone.app.z3cform.widgets.select import AjaxSelectFieldWidget
 from plone.autoform import directives
 from plone.dexterity.content import Container
 from plone.namedfile.field import NamedBlobImage
@@ -146,6 +147,22 @@ class IStaff(model.Schema):
         description=_(
             'Brief Biography containing CV information or more than 1000 characters '
             '(including html tags) will be REJECTED'),
+    )
+
+    directives.read_permission(subjects='yc.facultycv.AddStaff')
+    directives.write_permission(subjects='yc.facultycv.AddStaff')
+    subjects = schema.Tuple(
+        title=_("label_tags", default="Tags"),
+        description=_(
+            "help_tags",
+            default="Tags are commonly used for ad-hoc organization of " + "content.",
+        ),
+        value_type=schema.TextLine(),
+        required=False,
+        missing_value=(),
+    )
+    directives.widget(
+        "subjects", AjaxSelectFieldWidget, vocabulary="plone.app.vocabularies.Keywords"
     )
 
 @implementer(IStaff)
