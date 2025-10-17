@@ -706,7 +706,7 @@ class IFaculty(model.Schema):
     fieldset('Other Information',
              fields=['professional', 'grants', 'serviceDepartment', 'serviceSchool', 'serviceCollege',
                      'serviceGraduateCenter', 'serviceUniversity', 'officeHeld', 'activities', 'coursesTaught',
-                     'developed', 'hidecv', 'scholarEnhance', 'teachEnhance', 'subjects']
+                     'developed', 'hidecv', 'scholarEnhance', 'teachEnhance']
              )
     directives.widget(professional=DataGridFieldFactory)
     professional = schema.List(
