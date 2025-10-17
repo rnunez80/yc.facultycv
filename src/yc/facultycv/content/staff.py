@@ -155,23 +155,6 @@ class IStaff(model.Schema):
             '(including html tags) will be REJECTED'),
     )
 
-    directives.read_permission(subjects='zope2.View')
-    directives.write_permission(subjects='cmf.ModifyPortalContent')
-    directives.no_omit("subjects")
-    subjects = schema.Tuple(
-        title=_("label_tags", default="Tags"),
-        description=_(
-            "help_tags",
-            default="Tags are commonly used for ad-hoc organization of " + "content.",
-        ),
-        value_type=schema.TextLine(),
-        required=False,
-        missing_value=(),
-    )
-    directives.widget(
-        "subjects", AjaxSelectFieldWidget, vocabulary="plone.app.vocabularies.Keywords"
-    )
-
 @implementer(IStaff)
 class Staff(Container):
     """
@@ -480,31 +463,3 @@ class Staff(Container):
     def username(self, value):
         pass
 
-    # backing attribute
-    _subjects = ()
-
-    @property
-    def subjects(self):
-        return getattr(self, "_subjects", ())
-
-    @subjects.setter
-    def subjects(self, value):
-        # Permission check
-        member = api.user.get_current()
-        roles = api.user.get_roles(username=member.getUserName())
-        if "Site Administrator" not in roles:
-            raise Unauthorized("Only Site Administrators can modify the 'Tags' field.")
-
-        # Normalize value to tuple
-        if value is None:
-            value = ()
-        elif isinstance(value, list):
-            value = tuple(value)
-        elif not isinstance(value, tuple):
-            value = (value,)
-
-        # Set backing attribute
-        self._subjects = value
-
-        # Reindex the Subject index so the Contents/Folder view updates immediately
-        self.reindexObject(idxs=["Subject"])
