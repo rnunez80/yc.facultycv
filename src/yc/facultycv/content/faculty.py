@@ -65,6 +65,7 @@ getDegreeVocabulary = SimpleVocabulary([
     SimpleTerm(value='MPhil', title=_('MPhil')),
     SimpleTerm(value='MS', title=_('MS')),
     SimpleTerm(value='MSN', title=_('MSN')),
+    SimpleTerm(value='MSPH', title=_('MSPH')),
     SimpleTerm(value='MSW', title=_('MSW')),
     SimpleTerm(value='MVP', title=_('MVP')),
     SimpleTerm(value='non-degree', title=_('non-degree')),
