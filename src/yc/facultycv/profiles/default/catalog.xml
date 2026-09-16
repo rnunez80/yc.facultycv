@@ -62,8 +62,7 @@
  <index name="effective" meta_type="DateIndex">
   <property name="index_naive_time_as_local">True</property>
  </index>
-  <index name="effectiveRange" meta_type="DateRangeIndex"/>
- <index name="end" meta_type="DateRecurringIndex">
+  <index name="end" meta_type="DateRecurringIndex">
   <indexed_attr value="end"/>
  </index>
  <index name="expires" meta_type="DateIndex">
