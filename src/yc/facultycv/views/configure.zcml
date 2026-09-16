@@ -5,19 +5,19 @@
 
   -*- extra stuff goes here -*-
 
-  <browser:page
-    name="voltoimport"
-    for="zope.interface.Interface"
-    class=".voltoimport.VoltoImport"
-    permission="zope2.View"
-  />
+<!--  <browser:page-->
+<!--    name="voltoimport"-->
+<!--    for="zope.interface.Interface"-->
+<!--    class=".voltoimport.VoltoImport"-->
+<!--    permission="zope2.View"-->
+<!--  />-->
 
-  <browser:page
-    name="voltomigration"
-    for="zope.interface.Interface"
-    class=".voltomigration.VoltoMigration"
-    permission="zope2.View"
-  />
+<!--  <browser:page-->
+<!--    name="voltomigration"-->
+<!--    for="zope.interface.Interface"-->
+<!--    class=".voltomigration.VoltoMigration"-->
+<!--    permission="zope2.View"-->
+<!--  />-->
 
   <browser:page
     name="overview-catalog-search"
@@ -35,13 +35,13 @@
   />
 
 
-  <browser:page
-    name="cvmigration"
-    for="*"
-    class=".cvmigration.Cvmigration"
-    template="cvmigration.pt"
-    permission="zope2.View"
-  />
+<!--  <browser:page-->
+<!--    name="cvmigration"-->
+<!--    for="*"-->
+<!--    class=".cvmigration.Cvmigration"-->
+<!--    template="cvmigration.pt"-->
+<!--    permission="zope2.View"-->
+<!--  />-->
 
   <browser:page
     name="overview"
