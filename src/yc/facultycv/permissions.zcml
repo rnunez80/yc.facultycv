@@ -110,7 +110,7 @@
     />
 
     <permission
-      id="yc.facultycv.show_view"
+      id="yc.facultycv.ShowView"
       title="yc.facultycv: Show View"
     />
 
