@@ -60,16 +60,13 @@
     <property name="index_naive_time_as_local">True</property>
   </index>
   <index name="effectiveRange" meta_type="DateRangeIndex">
-    <property name="since_field" type="string">effective</property>
-    <property name="until_field" type="string">expires</property>
+    <indexed_attr value="effectiveRange"/>
   </index>
   <index name="effective" meta_type="DateIndex">
     <property name="index_naive_time_as_local">True</property>
   </index>
   <index name="end" meta_type="DateRecurringIndex">
     <indexed_attr value="end"/>
-    <property name="until_field">end</property>
-    <property name="until_delta_field">end_day_delta</property>
   </index>
   <index name="expires" meta_type="DateIndex">
     <property name="index_naive_time_as_local">True</property>
@@ -158,8 +155,6 @@
   </index>
   <index name="start" meta_type="DateRecurringIndex">
     <indexed_attr value="start"/>
-    <property name="since_field">start</property>
-    <property name="since_delta_field">start_day_delta</property>
   </index>
   <index name="sync_uid" meta_type="FieldIndex">
     <indexed_attr value="sync_uid"/>

@@ -15,7 +15,7 @@
     name="@college_votes"
     for="yc.facultycv.interfaces.ICollegeVoteMarker"
     factory=".get.Vote"
-    permission="yc.facultycv.do_college_vote"
+    permission="yc.facultycv.DoCollegeVote"
     />
 
   <plone:service

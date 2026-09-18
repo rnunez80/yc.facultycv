@@ -15,7 +15,7 @@
     name="@department_votes"
     for="yc.facultycv.interfaces.IDepartmentVoteMarker"
     factory=".get.Vote"
-    permission="yc.facultycv.do_department_vote"
+    permission="yc.facultycv.DoDepartmentVote"
     />
 
   <plone:service

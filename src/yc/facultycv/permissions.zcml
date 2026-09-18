@@ -90,22 +90,22 @@
     />
 
     <permission
-      id="yc.facultycv.view_college_vote"
+      id="yc.facultycv.ViewCollegeVote"
       title="yc.facultycv: View College Vote"
     />
 
     <permission
-      id="yc.facultycv.do_college_vote"
+      id="yc.facultycv.DoCollegeVote"
       title="yc.facultycv: Do College Vote"
     />
 
     <permission
-      id="yc.facultycv.view_department_vote"
+      id="yc.facultycv.ViewDepartmentVote"
       title="yc.facultycv: View Department Vote"
     />
 
     <permission
-      id="yc.facultycv.do_department_vote"
+      id="yc.facultycv.DoDepartmentVote"
       title="yc.facultycv: Do Department Vote"
     />
 
@@ -125,7 +125,7 @@
       />
 
     <permission
-      id="yc.facultycv.clear_votes"
+      id="yc.facultycv.ClearVotes"
       title="yc.facultycv: Can Clear Votes"
       />
 
